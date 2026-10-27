@@ -1,0 +1,100 @@
+[
+  {
+    "count": 0,
+    "valid_inputs_checked": 1,
+    "clauses": 16,
+    "auxiliaries": 0,
+    "component_sha256": "f3ed179d30fb47c58f79e426abe76ffe4a21d639b0e144022d93840ac46fe7e3"
+  },
+  {
+    "count": 1,
+    "valid_inputs_checked": 16,
+    "clauses": 45,
+    "auxiliaries": 15,
+    "component_sha256": "32c084414dd08190b4faf85bb9ac15c90f811eefc4b2e74e2d61765f3e30b21c"
+  },
+  {
+    "count": 2,
+    "valid_inputs_checked": 120,
+    "clauses": 112,
+    "auxiliaries": 56,
+    "component_sha256": "18635d568e2be05ce2fc28c4a6ec1366a86605929ebf0d9492cf2777052078d8"
+  },
+  {
+    "count": 3,
+    "valid_inputs_checked": 560,
+    "clauses": 156,
+    "auxiliaries": 78,
+    "component_sha256": "200397433da1badff4abb4a38364ad43e40ac8635f06584e9bf5664ba142365c"
+  },
+  {
+    "count": 4,
+    "valid_inputs_checked": 1820,
+    "clauses": 192,
+    "auxiliaries": 96,
+    "component_sha256": "f8d076d1f685b180df142e9c6adc5551858f7ed73313845b2d875b59e77a3eda"
+  },
+  {
+    "count": 5,
+    "valid_inputs_checked": 4368,
+    "clauses": 220,
+    "auxiliaries": 110,
+    "component_sha256": "8c5542e1e120ebee91bc139530a38d5fcf146fdf1dd940f5a6fa3e9b60f5b68c"
+  },
+  {
+    "count": 6,
+    "valid_inputs_checked": 8008,
+    "clauses": 240,
+    "auxiliaries": 120,
+    "component_sha256": "3951fdb02a0e40e4a961d07cc20e6b894d7bdd3736b5eb1408aacb5244dadd03"
+  },
+  {
+    "count": 7,
+    "valid_inputs_checked": 11440,
+    "clauses": 252,
+    "auxiliaries": 126,
+    "component_sha256": "964e4dfa0a117cc3a9eabe06100367351b3c8e6c0b727fc75301252f4aa816a5"
+  },
+  {
+    "count": 8,
+    "valid_inputs_checked": 12870,
+    "clauses": 256,
+    "auxiliaries": 128,
+    "component_sha256": "970646654a9a98a0ad7cb39bca5c1c1aabf172dfa2a9aff519040a352077b455"
+  },
+  {
+    "count": 9,
+    "valid_inputs_checked": 11440,
+    "clauses": 252,
+    "auxiliaries": 126,
+    "component_sha256": "77017496096cc554f36072e042077fdbd0462749d5aa7f327b79cc2b94e9f76f"
+  },
+  {
+    "count": 10,
+    "valid_inputs_checked": 8008,
+    "clauses": 240,
+    "auxiliaries": 120,
+    "component_sha256": "e66872539dc21bedcfe3b3dc8f3c36d22c3221d7bcfc0c699b8bfc7f3fd9b58f"
+  },
+  {
+    "count": 11,
+    "valid_inputs_checked": 4368,
+    "clauses": 220,
+    "auxiliaries": 110,
+    "component_sha256": "028c2f3941ffb23d1beb91002c5a5117706fa81f09b019efa92fc59c2002e631"
+  },
+  {
+    "count": 12,
+    "valid_inputs_checked": 1820,
+    "clauses": 192,
+    "auxiliaries": 96,
+    "component_sha256": "e7b342aeeefb22d266f673d514ecea398d773f4a5166398a2ef13cb6457a5a92"
+  },
+  {
+    "count": 13,
+    "valid_inputs_checked": 560,
+    "clauses": 156,
+    "auxiliaries": 78,
+    "component_sha256": "7f2cc45c856a03af8b4cdd493d6944d32317ba130d969c57614ed0f273cf1fa8"
+  }
+]

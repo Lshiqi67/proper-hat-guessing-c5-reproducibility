@@ -1,0 +1,31 @@
+Copyright (c) 2026 Shiqi Liu, to the extent of rights held by the author.
+
+This is a mixed-license research deposit. The author's selected terms are:
+
+1. Author-controlled reproduction, verification and packaging software:
+   MIT License. See LICENSES/MIT.txt.
+2. Author-controlled reproduction instructions and audit reports:
+   Creative Commons Attribution 4.0 International (CC BY 4.0).
+   See LICENSES/CC-BY-4.0.txt and https://creativecommons.org/licenses/by/4.0/.
+3. Manuscript text, figures, LaTeX source and manuscript PDFs:
+   the author has selected arXiv's perpetual non-exclusive distribution
+   license for submission. This is a grant to arXiv on submission, not an
+   MIT or CC BY license to readers, and not evidence of acceptance by arXiv.
+   See LICENSES/PAPER.md.
+
+The operative scope, frozen-archive identities and interaction with historical
+notices are explained in LICENSES/SCOPE.md and metadata/license-scope.json.
+The MIT and CC BY grants apply now to recipients of the applicable material;
+the repository's private visibility is separate from these permissions.
+
+The author grants these permissions only to the extent the author is entitled
+to do so. Third-party works and dependencies retain their own terms. No
+exclusive copyright is asserted over mathematical ideas, facts, methods,
+numerical values, public-domain material or otherwise uncopyrightable content.
+No claim is made that all AI-assisted contributions are copyrightable.
+
+Frozen files and ZIPs retain their original bytes and historical notices.
+For the author's covered code and documentation, this later additional grant
+supersedes any inconsistent restriction in those historical notices; it does
+not withdraw existing permissions. Preserve attribution and relevant notices.
+The full license texts govern. Licensing is not a correctness certification.

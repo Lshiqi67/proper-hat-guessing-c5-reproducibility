@@ -1,0 +1,169 @@
+\section{Boolean encoding and preservation of candidates}\label{sec:encoding}
+A formula in conjunctive normal form (CNF) is an AND of clauses, each
+clause being an OR of literals. Our base variables describe actual
+answers; auxiliary variables are used only to encode numerical counts.
+A genuine strategy supplies the base values, and we must show that
+suitable auxiliary values exist.
+\subsection{The base formula}
+For $i,a,b,g\in Q$, with $i$ denoting a vertex and $g\notin\{a,b\}$,
+introduce a Boolean variable
+\[
+x_{i,a,b,g}\quad\text{meaning}\quad f_i(a,b)=g.
+\]
+At each observation $(i,a,b)$ impose the clauses
+\begin{align}
+&\bigvee_{g\notin\{a,b\}}x_{i,a,b,g},\label{eq:at-least-one}\\
+&\neg x_{i,a,b,g}\lor\neg x_{i,a,b,h}
+\quad(g<h,\ g,h\notin\{a,b\}).\label{eq:at-most-one}
+\end{align}
+For every $c\in\calC_5$, add the coverage clause
+\begin{equation}\label{eq:coverage-clause}
+\bigvee_{i=1}^5x_{i,c_{i-1},c_{i+1},c_i}.
+\end{equation}
+All its variables exist because $c$ is proper. Let $\Phi$ be the
+conjunction of these clauses.
+
+\begin{lemma}[Exactness of the base encoding]\label{lem:base}
+The satisfying assignments of $\Phi$ are in bijection with normalized
+five-color winning strategies.
+\end{lemma}
+\begin{proof}
+Clauses~\eqref{eq:at-least-one} and~\eqref{eq:at-most-one} select exactly
+one allowed answer at each observation, determining a unique normalized
+strategy. Clause~\eqref{eq:coverage-clause} holds precisely when at least
+one player guesses correctly on its indexed configuration. There is one
+such clause for every member of $\calC_5$, so their conjunction is exactly
+\eqref{eq:winning}. Conversely, a normalized winning strategy sets its
+selected answer variables to true and satisfies all these clauses.
+\end{proof}
+
+For each player there are five equal-color observations with four allowed
+answers and twenty unequal-color observations with three allowed answers.
+The formula therefore has
+\[
+5(5\cdot4+20\cdot3)=400
+\]
+variables. The number of selection clauses is
+\[
+5\left[5\left(1+\binom42\right)+20\left(1+\binom32\right)\right]=575.
+\]
+Together with the 1020 coverage clauses, this gives 1595 clauses. In
+particular, equal-color neighbor observations and colorings using fewer
+than five colors have not been omitted.
+
+\subsection{The count-branch formula}
+Fix $a\in\calR_n$, and write $r_i=a_j$ when $i=1+2j$ modulo~5.
+The intended additional constraints are
+\begin{equation}\label{eq:cardinality}
+\sum_{u,v\in\{1,2,3,4\}}x_{i,u,v,5}=r_i
+\quad(1\leq i\leq5),\qquad x_{1,5,5,1}=1.
+\end{equation}
+They fix only five counts and one permissible normalization. In
+particular, no positions of the $r_i$ selected entries and no other answer
+values are fixed.
+
+The recorded implementation uses PySAT sequential-counter components
+for the five equalities~\cite{pysat}. Each component has exactly the
+16 listed input variables and its own auxiliary variables. Denote the
+actual generated component by $K_{i,r_i}(X_i,Y_i)$, where
+$X_i=(x_{i,u,v,5})_{u,v\in\{1,2,3,4\}}$ and the $Y_i$ are disjoint.
+The actual parent formula is
+\begin{equation}\label{eq:parent}
+F_a=\Phi\land x_{1,5,5,1}\land\bigwedge_{i=1}^5K_{i,r_i}(X_i,Y_i).
+\end{equation}
+For a refined parent, the formula at pattern $t\in\calT$, where $\calT$
+is defined by~\eqref{eq:rgs}, is exactly
+\begin{equation}\label{eq:child}
+F_{a,t}=F_a\land\bigwedge_{i=1}^5x_{i,5,5,t_i}.
+\end{equation}
+The first of these five units duplicates the normalization in $F_a$ and
+is harmless.
+
+For the weight-17 example $a=(2,4,4,2,5)$, the counter targets are
+$(r_1,r_2,r_3,r_4,r_5)=(2,2,4,5,4)$. In a possible refinement such as
+$t=(1,2,1,3,2)$, the answers at $(5,5)$ are fixed to those five values,
+while every other answer remains subject only to the base formula and
+counts. Fixing a count is therefore different from fixing a table.
+
+\subsection{Why auxiliary encodings do not discard a true strategy}
+The required direction for an impossibility proof is
+\begin{equation}\label{eq:extension}
+\left(\sum X_i=r_i\right)
+\ \Longrightarrow\ \exists Y_i\ K_{i,r_i}(X_i,Y_i).
+\end{equation}
+Even if a component were to admit an unintended input, its
+unsatisfiability in the full branch would still exclude all intended
+inputs. Thus the reverse implication is not needed for this argument.
+Rather than relying only on a library's claim that an encoding is exact,
+the recorded audit checks~\eqref{eq:extension} on every intended input of
+each actual component type.
+
+This one-way implication is essential. Accidentally removing an intended
+input could invalidate an exclusion proof. Admitting extra inputs makes
+exclusion harder, but an actual refutation would still exclude the intended
+ones. We do not assert a bijection between strategies and assignments of
+auxiliary variables; Lemma~\ref{lem:base} concerns only the base formula.
+
+For this check, the 16 input variables are renamed $1,\ldots,16$, and the
+component's auxiliary variables are renamed consecutively from~17. A
+component type is identified by its count and its complete normalized
+clause list, not just by the count. After a particular input assignment
+has been substituted, each remaining clause has at most one positive
+auxiliary literal. This Horn property is checked from the actual clauses.
+
+Under substitution, a clause with a true input literal is discarded;
+false input literals are removed from the remaining clauses. A remaining
+clause $\neg y_1\lor\cdots\lor\neg y_k\lor y$ is the rule
+$y_1\land\cdots\land y_k\Rightarrow y$. With no positive literal its
+head is $\bot$; with no negative literals it is a fact. This also covers
+unit clauses and empty residual clauses.
+
+\begin{lemma}[Auxiliary extension check]\label{lem:horn}
+For a fixed input assignment, suppose the residual auxiliary formula is
+Horn. Start with no auxiliary variable true. Repeatedly apply every rule
+\[
+y_{j_1}\land\cdots\land y_{j_k}\ \Longrightarrow\ y_\ell
+\]
+whose premises are true. Treat a clause with no positive literal as the
+same rule with conclusion $\bot$. If closure is reached without deriving
+$\bot$, setting exactly the derived variables true satisfies the residual
+formula.
+\end{lemma}
+\begin{proof}
+There are finitely many variables, and every successful application adds
+a previously false variable, so the process terminates. At closure, a
+rule with all premises true has its head true. A rule with head $\bot$
+cannot have all premises true. Hence every residual Horn clause is
+satisfied. Clauses already satisfied by the fixed input remain satisfied,
+so this assignment also satisfies the original component.
+\end{proof}
+
+The implementation additionally evaluates every original component clause
+on the constructed assignment. For count $r$, it enumerates every
+$r$-element subset of the 16 input positions, with no sampling. It checks
+the variable ranges and clause intervals to ensure that no component uses
+another component's auxiliary variables or unrelated strategy variables.
+Consequently, the five separate auxiliary assignments can be combined.
+
+\begin{proposition}[Preservation by a branch input]\label{prop:input}
+Suppose the base clauses, variable lists, extra units, and all properties
+\eqref{eq:extension} have been checked for a branch. Every normalized
+winning strategy in that branch extends to a satisfying assignment of
+its actual formula~\eqref{eq:parent} or~\eqref{eq:child}.
+\end{proposition}
+\begin{proof}
+Lemma~\ref{lem:base} supplies a satisfying assignment of $\Phi$.
+The strategy satisfies the branch counts and the normalization, so
+\eqref{eq:extension} supplies an auxiliary assignment for each component.
+The auxiliary sets are disjoint, so their union satisfies all five
+components simultaneously. In a refined branch the strategy also
+satisfies its five diagonal units.
+\end{proof}
+
+The input audit reconstructs~\eqref{eq:at-least-one}--\eqref{eq:coverage-clause}
+directly from the game, compares the base clause multiset, checks all five
+component boundaries, and confirms that the only other parent clause is
+$x_{1,5,5,1}$. Every child is compared clause by clause with its parent
+plus the five specified units. These checks address the mathematical input
+to the solver, separately from any subsequent refutation.
+

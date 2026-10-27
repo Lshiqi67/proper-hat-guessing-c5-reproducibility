@@ -1,0 +1,78 @@
+{
+  "version": "c5-evidence-20261026-v1",
+  "publication_status": "LOCAL_ONLY_NOT_PUBLISHED",
+  "assets": [
+    {
+      "name": "c5-evidence-20261026-v1-weight17.zip",
+      "weight": 17,
+      "files": 10,
+      "uncompressed_bytes": 1183936,
+      "bytes": 322129,
+      "sha256": "ddf1b789a3696731ee98739483146309aeff9e0ff45325182823aa96938dfe90"
+    },
+    {
+      "name": "c5-evidence-20261026-v1-weight18.zip",
+      "weight": 18,
+      "files": 37,
+      "uncompressed_bytes": 6348332,
+      "bytes": 1753728,
+      "sha256": "d39c83d6bf88bba424e3771bcf953e6ab6ff10fae45bd866ed851a9a7464379f"
+    },
+    {
+      "name": "c5-evidence-20261026-v1-weight19.zip",
+      "weight": 19,
+      "files": 88,
+      "uncompressed_bytes": 27829283,
+      "bytes": 7734230,
+      "sha256": "2ce7ea386a460c6ed8d878d67e7820aaf347c954de19ced7d91523a015cda894"
+    },
+    {
+      "name": "c5-evidence-20261026-v1-weight20.zip",
+      "weight": 20,
+      "files": 181,
+      "uncompressed_bytes": 78560454,
+      "bytes": 22015175,
+      "sha256": "dc2fc24a559712a103726c5ea0fa8ff3218784c514b19be1fb072efbcc2b9b10"
+    },
+    {
+      "name": "c5-evidence-20261026-v1-weight21.zip",
+      "weight": 21,
+      "files": 307,
+      "uncompressed_bytes": 387759433,
+      "bytes": 111440490,
+      "sha256": "cf25ab2cc139d3a291a86aa12646a45b137c53b54baa1455cd8955f7d7dc5281"
+    },
+    {
+      "name": "c5-evidence-20261026-v1-weight22.zip",
+      "weight": 22,
+      "files": 1612,
+      "uncompressed_bytes": 551994391,
+      "bytes": 157445377,
+      "sha256": "63a3dbdf7c8650330f8d644356d3eb140ee36c518b1c6df7e6b66668b81bcbc7"
+    },
+    {
+      "name": "c5-evidence-20261026-v1-weight23.zip",
+      "weight": 23,
+      "files": 3577,
+      "uncompressed_bytes": 1092461645,
+      "bytes": 312954465,
+      "sha256": "e19e5ec4bf6452f97c03bfe7e80eff61d58b355c44e31ac4f4c2909cb28259bd"
+    },
+    {
+      "name": "c5-evidence-20261026-v1-weight24.zip",
+      "weight": 24,
+      "files": 4696,
+      "uncompressed_bytes": 1585219601,
+      "bytes": 453799972,
+      "sha256": "372c0a975259828927c09c1bf34a639149440ee2d0f676e72fcb8d56eee46c85"
+    },
+    {
+      "name": "c5-evidence-20261026-v1-weight25.zip",
+      "weight": 25,
+      "files": 8428,
+      "uncompressed_bytes": 2862056042,
+      "bytes": 824199267,
+      "sha256": "fbe4987abc62a79793196c0a816e72e0cfcf9b23321f63fb1c72af8d6d9ae836"
+    }
+  ]
+}

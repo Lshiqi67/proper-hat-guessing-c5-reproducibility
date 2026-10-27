@@ -1,0 +1,14 @@
+{
+  "version": "c5-reviewed-evidence-20261027-v2",
+  "prepared_date": "2026-10-27",
+  "publication_status": "LOCAL_ONLY_NOT_PUBLISHED",
+  "public_archive_url": null,
+  "doi": null,
+  "audit_archive_url": null,
+  "code_archive_url": null,
+  "evidence_archive_urls": null,
+  "licence_status": "Existing private-review notice retained verbatim; public release terms not selected.",
+  "evidence_asset_version": "c5-evidence-20261026-v1",
+  "evidence_policy": "The nine original evidence archives are unchanged. Version 2 adds the fresh 2026-10-27 audit sources, exact-coverage portable entry point, and consolidated review package.",
+  "manuscript_sha256": "5ae7ed9858c5064ee894f52d9825ac6cbed38b533428b1426a03d365ed9c28e6"
+}

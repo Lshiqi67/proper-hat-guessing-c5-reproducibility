@@ -1,0 +1,92 @@
+\section{The deduction and the status of the argument}\label{sec:conclusion}
+We first isolate the precise logical role of the computational assertion.
+
+\begin{theorem}[Certificate-to-game implication]\label{thm:bridge}
+If the finite exclusion and input checks in
+Proposition~\ref{prop:finite} are correct, then there is no five-color
+winning strategy on $C_5$.
+\end{theorem}
+\begin{proof}
+Suppose a winning strategy exists. Proposition~\ref{prop:coverage}
+places an equivalent normalized winning strategy in a parent count branch
+with $17\leq n\leq25$. If the parent is a direct terminal branch,
+Proposition~\ref{prop:input} extends this strategy to a satisfying
+assignment of $F_a$, whereas Proposition~\ref{prop:finite} and
+Lemma~\ref{lem:rup} make $F_a$ unsatisfiable.
+
+If the parent is refined, Lemma~\ref{lem:patterns} first places an
+equivalent strategy in one of its 51 subcases. This transformation
+preserves the parent counts and its normalization. The same extension
+argument gives a satisfying assignment of that $F_{a,t}$, contradicting
+its checked refutation. These two cases exhaust the parent list.
+\end{proof}
+
+\begin{proof}[Argument for Theorem~\ref{thm:main}]
+The original verification and the complete new replay supply the premise of
+Theorem~\ref{thm:bridge}, and hence excludes five colors, subject to the
+verification status stated in this manuscript. Proposition~\ref{prop:four}
+provides a winning strategy for four colors. If a winning strategy existed
+for more than five colors, Lemma~\ref{lem:palette} would produce one for
+five colors. Therefore the value established by this computer-assisted
+argument is exactly four.
+\end{proof}
+
+There is also an informative intermediate consequence of excluding the
+weights below~25.
+\begin{corollary}[The last remaining count]\label{cor:balance}
+Assume that the exclusions at weights 17--24 are correct. Any five-color
+winning strategy would then satisfy
+\[
+S(1)=S(2)=S(3)=S(4)=S(5)=25
+\]
+and would have no entry that guesses a neighbor's color. The verified
+exclusion at weight 25, if correct, contradicts this necessary condition.
+\end{corollary}
+\begin{proof}
+For any fixed $z$, the count-preserving normalization of
+Lemma~\ref{lem:normalization}, followed by the same graph and color
+reductions, would place a strategy with $S(z)\leq24$ in an excluded branch;
+Proposition~\ref{prop:seventeen} rules out totals below~17. Thus every
+$S(z)\geq25$. Lemma~\ref{lem:total} gives $\sum_zS(z)\leq125$ even before
+normalization. Equality must hold in all five lower bounds, and every
+entry must contribute to the sum. An entry guessing a neighbor's color
+would contribute zero, so no such entry can occur. Weight 25 is then
+excluded by the final family of certificates.
+\end{proof}
+
+This equality concerns the total for a color over all five players; it
+does not say that each player guesses each color five times. It is a
+necessary condition inside the proposed contradiction, not a construction
+of a winning strategy. Moreover, none of the branch inputs used another
+color's lower bound or the conclusion of another weight. The finite
+exclusions therefore do not depend circularly on this balance statement.
+
+\subsection*{Computer and AI assistance}
+OpenAI Codex assisted with mathematical exploration, program development,
+local computations, organization of the evidence, and preparation and
+revision of this manuscript. The solver, input auditors, and proof
+checkers have different roles, but were integrated within the same
+AI-assisted workflow. The status distinction made in the introduction
+therefore applies throughout: separate local programs are not external
+reviewers, and neither the written argument nor the checking software has
+been formally verified in a proof assistant.
+
+\subsection*{Data availability and further work}
+The organized research archive contains definitions, proof drafts,
+programs, inputs, certificates, audit reports, and historical failures.
+A private repository copy and versioned evidence attachments exist for
+the earlier manuscript and research archive. The complete audit package
+and the present revised manuscript have been organized locally; their
+creation is not a claim of public availability or external review.
+The appendix gives paths relative to the research root, so readers with
+access can trace each assertion to its source and reproduce the checks.
+Manuscript source alone is insufficient for a full replay: the large
+certificate files must also be present.
+
+A full local replay with newly implemented software has now been
+completed. The next verification tasks are external scrutiny of the
+combinatorial reductions and use of a separately reviewed or formally
+verified certificate checker. A further mathematical goal is to replace the large finite
+exclusion with a shorter argument explaining the incompatibility between
+the three occurrence families. The local witness shows why the
+240 two-occurrence colorings alone cannot supply that explanation.

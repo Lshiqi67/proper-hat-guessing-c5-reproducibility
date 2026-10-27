@@ -1,0 +1,133 @@
+{
+  "status": "PASSED_FOR_RECORDED_SCOPE",
+  "started_at": "2026-10-27T01:43:02.452302+08:00",
+  "isolated_root": "D:\\ai4math-Math\\c5-v2-20261027",
+  "code_archive": "D:\\ai4math-Math\\02_problems\\P001-c5-five-color-hats\\release-candidates\\20261027-reviewed-evidence-v2\\archives\\c5-reviewed-evidence-20261027-v2-code.zip",
+  "code_archive_sha256": "830ac5e4f806cff722a02ac0e72da6d7ebd0e6543739059f1c1dcfba447c2d4a",
+  "python": "3.13.0 (tags/v3.13.0:60403a5, Oct  7 2024, 09:38:07) [MSC v.1941 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "full_rup_replay_repeated": false,
+  "random_seed": null,
+  "tested_entrypoint_sha256": "2ebb84ac78380b3fda3b882ed068f8cc3de7bfa1959c68ec9fbb191fa4cebe23",
+  "result": {
+    "restore": {
+      "weights": [
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "restored_files": 18936,
+      "restored_bytes": 6593413117,
+      "archive_sha256_checked": true,
+      "exact_member_inventory_checked": true,
+      "every_member_sha256_and_crc_checked": true,
+      "terminal_hashes_cross_checked_to_20261027_selection": true
+    },
+    "inputs": {
+      "source_sha256": "af9524fbc6a4507a025db436678f774d1555af0a35988bc46fbebcc3ab1598df",
+      "adapter_changes": [
+        "ROOT",
+        "OUTPUTS",
+        "HERE",
+        "START timer only"
+      ],
+      "audit_report": "report.json",
+      "parent_inputs": 1413,
+      "child_inputs": 7344,
+      "valid_auxiliary_inputs": 65399,
+      "proof_inferences_replayed": false
+    },
+    "replay": {
+      "scope": "EXPLICIT_PARTIAL_SET",
+      "leaves": 1,
+      "additions": 4899,
+      "checked_empty_clauses": 1,
+      "deletion_records_parsed_and_ignored": 2514,
+      "checker_source_sha256": "fa991db895021be9f4fc50ca010fb221d05d850f398c38c1c2c3615f8c58dd63",
+      "compiled_executable_sha256": "a0844605ebd4f1e268c5e7f796e88e1720bb149d9cf03a7380d9f8834b0dcb49",
+      "compiler_command": [
+        "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\csc.exe",
+        "/nologo",
+        "/optimize+",
+        "/out:D:\\ai4math-Math\\02_problems\\P001-c5-five-color-hats\\release-candidates\\20261027-reviewed-evidence-v2\\checks\\validation\\leaf-17-0\\FreshRup.exe",
+        "D:\\ai4math-Math\\c5-v2-20261027\\c5-reviewed-evidence-20261027-v2\\fresh-audit\\FreshRup.cs"
+      ],
+      "replay_command": [
+        "D:\\ai4math-Math\\02_problems\\P001-c5-five-color-hats\\release-candidates\\20261027-reviewed-evidence-v2\\checks\\validation\\leaf-17-0\\FreshRup.exe",
+        "--batch",
+        "D:\\ai4math-Math\\02_problems\\P001-c5-five-color-hats\\release-candidates\\20261027-reviewed-evidence-v2\\checks\\validation\\leaf-17-0\\batch.tsv",
+        "D:\\ai4math-Math\\02_problems\\P001-c5-five-color-hats\\release-candidates\\20261027-reviewed-evidence-v2\\checks\\validation\\leaf-17-0\\replay.tsv"
+      ],
+      "exact_unique_identity_coverage_checked": true,
+      "old_success_cache_used": false
+    }
+  },
+  "negative_tests": [
+    {
+      "case": "8613 selection rows with one repeated identity and one missing identity",
+      "rejected": true
+    },
+    {
+      "case": "existing-output",
+      "command": [
+        "E:\\Python\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "D:\\ai4math-Math\\c5-v2-20261027\\c5-reviewed-evidence-20261027-v2\\tools\\verify.py",
+        "integrity",
+        "--root",
+        "D:\\ai4math-Math\\c5-v2-20261027\\c5-reviewed-evidence-20261027-v2",
+        "--out",
+        "D:\\ai4math-Math\\02_problems\\P001-c5-five-color-hats\\release-candidates\\20261027-reviewed-evidence-v2\\checks\\validation\\integrity"
+      ],
+      "returncode": 1,
+      "rejected": true
+    },
+    {
+      "case": "output-inside-input",
+      "command": [
+        "E:\\Python\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "D:\\ai4math-Math\\c5-v2-20261027\\c5-reviewed-evidence-20261027-v2\\tools\\verify.py",
+        "integrity",
+        "--root",
+        "D:\\ai4math-Math\\c5-v2-20261027\\c5-reviewed-evidence-20261027-v2",
+        "--out",
+        "D:\\ai4math-Math\\c5-v2-20261027\\c5-reviewed-evidence-20261027-v2\\bad-output"
+      ],
+      "returncode": 1,
+      "rejected": true
+    },
+    {
+      "case": "full-narrowed",
+      "command": [
+        "E:\\Python\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "D:\\ai4math-Math\\c5-v2-20261027\\c5-reviewed-evidence-20261027-v2\\tools\\verify.py",
+        "replay",
+        "--root",
+        "D:\\ai4math-Math\\c5-v2-20261027\\c5-reviewed-evidence-20261027-v2",
+        "--full",
+        "--weight",
+        "17",
+        "--out",
+        "D:\\ai4math-Math\\02_problems\\P001-c5-five-color-hats\\release-candidates\\20261027-reviewed-evidence-v2\\checks\\validation\\full-narrowed"
+      ],
+      "returncode": 1,
+      "rejected": true
+    }
+  ],
+  "finished_at": "2026-10-27T01:50:31.584370+08:00",
+  "elapsed_seconds": 449.13210790000085
+}

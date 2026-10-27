@@ -1,0 +1,177 @@
+\section{Complete finite classification}\label{sec:classification}
+We now retain only the necessary information proved in the preceding
+section. The resulting classes are deliberately larger than the set of
+winning strategies. Excluding all of them will therefore exclude every
+winning strategy, even though some listed vectors may be unrealizable
+for reasons not used in the classification.
+\subsection{Count representatives}
+The main argument will use a color with $17\leq S(z)\leq25$.
+We write $a_j=s_{1+2j}(z)$, so consecutive coordinates correspond to
+nonadjacent players. In this order the necessary conditions have a uniform
+cyclic form.
+For an integer $n$, let $\calA_n$ be the set of integer vectors
+$a=(a_0,\ldots,a_4)$ satisfying
+\begin{align}
+0\leq a_j\leq16,\qquad&\sum_{j=0}^4a_j=n,\label{eq:A1}\\
+a_j+a_{j+1}&\geq6,\label{eq:A2}\\
+a_j+a_{j+1}=6\quad&\Longrightarrow\quad
+(a_j,a_{j+1})\in\{(0,6),(2,4),(3,3),(4,2),(6,0)\},\label{eq:A3}\\
+a_{j-1}+a_j=a_j+a_{j+1}=6\quad&\Longrightarrow\quad
+a_j\in\{0,4\}.\label{eq:A4}
+\end{align}
+All indices in these conditions are modulo~5. The range and total are
+the definitions of the counts; \eqref{eq:A2} is Lemma~\ref{lem:pair},
+\eqref{eq:A3} is Lemma~\ref{lem:tight}, and \eqref{eq:A4} is
+Corollary~\ref{cor:two-tight}. No claim of sufficiency is needed.
+
+Let $D_5$ act on these vectors by cyclic shifts and reversal. Choose the
+representative that minimizes the ordered pair
+\begin{equation}\label{eq:canonical}
+\bigl(a_0+a_1,(a_0,a_1,a_2,a_3,a_4)\bigr)
+\end{equation}
+lexicographically, and denote the set of representatives by $\calR_n$.
+The first component of~\eqref{eq:canonical} is an ordering convention
+that places a least pair sum first; it is not an additional restriction.
+After one representative has been selected from each orbit, the saved
+list is sorted lexicographically by the five-tuple itself. This
+serialization order is distinct from the key used to select a
+representative; set equality and absence of duplicates determine coverage.
+
+\begin{lemma}[Validity of the graph reduction]\label{lem:dihedral}
+Every winning strategy with $S(z)=n$ has an equivalent strategy whose
+count vector in the order $(1,3,5,2,4)$ belongs to $\calR_n$.
+\end{lemma}
+\begin{proof}
+The count vector belongs to $\calA_n$ by the results of
+Section~\ref{sec:local}. A rotation of the vertices transports the five
+functions in their cyclic order. A reflection transports the functions
+and interchanges their left and right arguments. In either case proper
+colorings are carried bijectively to proper colorings, and correct guesses
+are preserved. On the matrices, reflection includes transposition, which
+preserves their weights. The action on the order $(1,3,5,2,4)$ is again all
+cyclic shifts and reversals: multiplication by 2 is invertible modulo~5.
+Thus an automorphism sends the count vector to its representative without
+requiring any invariance of the strategy itself.
+\end{proof}
+
+Explicitly, use vertex labels in $\mathbb Z/5\mathbb Z$ temporarily. A rotation
+$h(i)=i+d$ transports rules by $g_{h(i)}(u,v)=f_i(u,v)$; a reflection
+$h(i)=d-i$ transports them by $g_{h(i)}(u,v)=f_i(v,u)$. For
+$c'_{h(i)}=c_i$, both formulas give
+$g_{h(i)}(c'_{h(i)-1},c'_{h(i)+1})=f_i(c_{i-1},c_{i+1})$.
+Thus each individual correct guess is preserved. In the count order
+$i=1+2j$, the induced actions are $j\mapsto j+k$ and $j\mapsto k-j$.
+
+\subsection{Enumerating the representatives}
+There are two elementary ways to produce the entire list. One enumerates
+$(a_0,a_1,a_2,a_3)\in\{0,\ldots,16\}^4$, sets
+$a_4=n-a_0-a_1-a_2-a_3$, and checks~\eqref{eq:A1}--\eqref{eq:A4}. A
+different enumeration uses slack variables
+\begin{equation}\label{eq:slack}
+e_j=a_j+a_{j+1}-6,\qquad e_j\geq0,\qquad\sum_je_j=2n-30.
+\end{equation}
+Write $b_j=6+e_j$. The equations $a_j+a_{j+1}=b_j$ have the unique solution
+\begin{equation}\label{eq:inverse}
+2a_0=b_0-b_1+b_2-b_3+b_4,\qquad
+a_{j+1}=b_j-a_j\quad(0\leq j<4).
+\end{equation}
+Enumerating all compositions of $2n-30$ into five nonnegative parts,
+applying~\eqref{eq:inverse}, and testing~\eqref{eq:A1}--\eqref{eq:A4}
+therefore gives exactly the same set $\calA_n$. An odd numerator in
+\eqref{eq:inverse} is rejected. The last cyclic equation follows from the
+formula for $a_0$; the total sum is also checked explicitly in the audit.
+This establishes completeness of both enumeration schemes.
+
+For example, the list at weight 17 consists of
+\[
+\calR_{17}=\{(2,4,3,3,5),\ (2,4,4,2,5),\ (3,3,4,3,4)\}.
+\]
+The middle vector specifies player counts $(2,2,4,5,4)$ in the ordinary
+order $(1,2,3,4,5)$, but fixes none of the locations of the counted entries.
+It is also the count vector of the local witness in Appendix~\ref{app:witness}.
+In particular, a count branch contains many possible strategies; the
+displayed witness is only one table assignment with those counts.
+
+\subsection{Color relabeling and 51 diagonal patterns}
+A permutation $\sigma$ of $Q$ acts on strategies by
+\begin{equation}\label{eq:color-action}
+f_i^\sigma(a,b)=
+\sigma\bigl(f_i(\sigma^{-1}(a),\sigma^{-1}(b))\bigr).
+\end{equation}
+It preserves properness and correctness of each guess. After making the
+chosen color equal to 5, permutations of the remaining four colors preserve
+every $s_i(5)$. In particular, since $f_1(5,5)\ne5$, we may impose
+\begin{equation}\label{eq:one-unit}
+f_1(5,5)=1.
+\end{equation}
+No second normalization involving a different observation is imposed in
+the count-branch inputs.
+The word ``diagonal'' refers to the observation $(5,5)$ in a player's
+table. The two observed vertices are not adjacent to one another, so this
+observation is permitted in a proper coloring.
+
+\begin{lemma}[Diagonal-pattern reduction]\label{lem:patterns}
+Let $t_i=f_i(5,5)\in\{1,2,3,4\}$. Up to a common permutation of these
+four colors, $(t_1,\ldots,t_5)$ is one of the 51 words satisfying
+\begin{equation}\label{eq:rgs}
+t_1=1,\qquad
+1\leq t_j\leq\min\{4,1+\max_{\ell<j}t_\ell\}\quad(2\leq j\leq5).
+\end{equation}
+This normalization preserves the count representative already chosen.
+\end{lemma}
+\begin{proof}
+Assign the label 1 to the first color encountered in the word, label 2 to
+the next previously unseen color, and so forth. Extend this assignment
+arbitrarily to a permutation of all four colors. The resulting word
+satisfies~\eqref{eq:rgs}. Conversely, its equality classes determine it
+uniquely. These words correspond to partitions of five labeled positions
+into at most four nonempty blocks. The recurrence
+$\Stirling{n}{k}=k\Stirling{n-1}{k}+\Stirling{n-1}{k-1}$ gives
+\[
+\Stirling{5}{1}+\Stirling{5}{2}+\Stirling{5}{3}+\Stirling{5}{4}
+=1+15+25+10=51.
+\]
+The permutation fixes color 5, so it only permutes the 16 observations
+inside each $M_i^5$ and preserves its weight. If~\eqref{eq:one-unit}
+already holds, the first-occurrence relabeling fixes its answer~1.
+\end{proof}
+
+For example, the word $(1,4,1,2,4)$ has equality blocks
+$\{1,3\}$, $\{2,5\}$, and $\{4\}$. Relabeling its first, second, and
+third distinct answers as $1,2,3$ gives $(1,2,1,3,2)$.
+This is one common permutation applied to every strategy table, not five
+independent changes of the players' answers. It preserves color~5 and
+the already imposed answer $f_1(5,5)=1$.
+
+\subsection{Why every candidate reaches a listed branch}
+\begin{proposition}[Coverage of all five-color candidates]\label{prop:coverage}
+If a five-color winning strategy exists, there are
+$n\in\{17,\ldots,25\}$ and $a\in\calR_n$ such that an equivalent
+normalized winning strategy has count vector $a$ and satisfies
+\eqref{eq:one-unit}. For any such count branch selected for refinement,
+at least one of the 51 constraints~\eqref{eq:rgs} still contains an
+equivalent winning strategy.
+\end{proposition}
+\begin{proof}
+Normalize by Lemma~\ref{lem:normalization}, choose a color with total at
+most 25 by Lemma~\ref{lem:total}, and relabel it as~5.
+Proposition~\ref{prop:seventeen} supplies the lower bound 17. Apply
+Lemma~\ref{lem:dihedral}, then a color permutation fixing 5 to obtain
+\eqref{eq:one-unit}. If the branch is refined, apply
+Lemma~\ref{lem:patterns}. Each step preserves winning and all count
+conditions needed by the next step.
+\end{proof}
+
+The order of the two reductions matters. First a vertex automorphism
+selects the count representative; next a permutation of the four
+non-special colors selects the diagonal representative without changing
+any count. The latter operation therefore cannot undo the former. There
+is no requirement that the diagonal tuple also be minimal under vertex
+automorphisms.
+
+Accordingly, the 51 subcases cover strategy \emph{orbits} under the proved
+color action. They need not contain every labeled diagonal word as a
+literal assignment. This is a change to an equivalent candidate, not a
+symmetry requirement on the five unknown functions. In the next section,
+the transformed candidate will be assigned its own auxiliary variables.
+

@@ -1,0 +1,272 @@
+\section{Evidence organization and reproduction}\label{app:reproduction}
+This appendix documents the original computation and the earlier partial
+revision checks. The later complete local audit is documented in
+Appendix~\ref{app:audit}; no external replay is claimed.
+
+\subsection{From the paper to the organized research record}
+The paper follows the dependence of the final argument. The archive also
+preserves the order in which methods were tried; these two orders should
+not be confused. The research identifiers L001--L020 denote entries in
+\path{lemmas.md}; R008 denotes
+\path{results/R008-five-color-impossibility.md}. They are stable archive
+identifiers, not theorem numbers in this paper.
+
+\begin{center}\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{4.0cm}>{\raggedright\arraybackslash}p{3.5cm}>{\raggedright\arraybackslash}p{6.7cm}@{}}
+\toprule
+Paper result&Research source&What to examine\\
+\midrule
+Model and reductions, Section~\ref{sec:preliminaries}
+&L001, L002, L007, L008, L012
+&Original quantifiers, ordered observations, palette restriction, and
+count-preserving normalization.\\[3pt]
+Pair and tight-pair lemmas, Section~\ref{sec:local}
+&L009--L010; A001 proof draft
+&Missed-pair covers, rectangle supports, and the distinction between a
+local optimum and a full-game strategy.\\[3pt]
+Count and diagonal coverage, Section~\ref{sec:classification}
+&L015--L016; A005 proof draft
+&The player-order conversion, canonical representatives, and a single
+common color permutation.\\[3pt]
+Input preservation, Section~\ref{sec:encoding}
+&\path{models/sat.md}; A001 input audits
+&All proper colorings, actual counter inputs, disjoint auxiliaries,
+and absence of unintended restrictions.\\[3pt]
+Finite exclusion and deduction, Sections~\ref{sec:certificates}--\ref{sec:conclusion}
+&L018--L020; R008
+&The adopted leaf set, RUP steps, and the exact conditional passage
+from a refuted formula to the game.\\[3pt]
+Local witness, Appendix~\ref{app:witness}
+&L010; A001 two-occurrence experiment
+&The complete table and the differing outcomes in the three families.\\
+\bottomrule
+\end{tabular}
+\end{center}
+The two attempt directories are
+\begin{quote}\small
+A001: \path{attempts/A001-v4-extension/}\\
+A005: \path{attempts/A005-diagonal-pattern-exhaustion/}
+\end{quote}
+Their \path{proof.md} and \path{log.md} files preserve derivations and
+failures. The four principal review entry points are:
+\begin{itemize}
+\item \path{review/proof-map.md}: argument dependencies and evidence roles;
+\item \path{review/catalog/README.md}: the nine weights, their parents,
+and the finally adopted terminal certificates;
+\item \path{review/reproduction.md}: commands that leave original evidence intact;
+\item \path{review/environment.md}: versions, file formats, and index conventions.
+\end{itemize}
+
+Two historical methods clarify what the final argument does not need.
+The earlier position-pattern proof at weights 17--19 fixes all 80
+special-color indicators. The final count proof redoes these weights
+with only five counts and does not depend on that earlier core chain.
+The A005 experiment, which used the 51 diagonal classes without count
+constraints, returned \texttt{UNKNOWN} in every class under its recorded
+budget. The final proof uses those classes only inside selected count
+branches. Neither the earlier restricted failure nor those unknown
+statuses are substitutes for a terminal refutation.
+
+\subsection{A traceable branch and its refinement}
+A branch identifier is local to its weight, and starts at zero.
+At weight 17, \path{profile-001/} corresponds to
+$a=(2,4,4,2,5)$ in order $(1,3,5,2,4)$, hence to
+$(2,2,4,5,4)$ in the player order used by \path{groups.json}.
+The local witness in Appendix~\ref{app:witness} has these counts but
+violates some base coverage clauses, so it is not a satisfying assignment
+of this branch. Its local success and this branch's refutation are
+therefore consistent.
+
+At weight 24, \path{profile-317/} is a refined parent. To inspect it,
+first locate the parent in \path{review/catalog/branches.json}, check
+its input and group metadata, and then follow all 51 entries under
+\path{diagonal-split/}. For instance, \path{case-11111/} fixes all five
+answers at $(5,5)$ to 1. The saved parent summary records 51 leaves and
+336,715 accepted additions in total. An old parent \texttt{UNKNOWN}
+report is not the final status of these child refutations.
+
+\subsection{Recorded environment and file layout}
+The recorded runs used Windows, Python~3.13.0, the Python package
+\texttt{python-sat} version~1.9.dev17, and the Glucose3 interface
+\texttt{g3}. The RUP checkers were written in C\# and compiled with the
+Microsoft .NET Framework compiler. The profile enumeration, diagonal
+enumeration, and input-extension checks are exhaustive and deterministic;
+no random seed is used in these enumerations. Historical randomized
+implementation cross-checks have their own recorded seeds and are not
+used in place of the exhaustive checks.
+
+Paths below are relative to the research root: locally it is
+\path{P001-c5-five-color-hats}, and in the prepared repository copy it
+is \path{research/}. The numbering and relative evidence paths agree. The main computational directory is
+\[
+\texttt{attempts/A001-v4-extension/checks/}.
+\]
+For each weight $n$, its subdirectory
+\path{outputs/weightNN-count-profiles/} contains
+\begin{enumerate}
+\item \path{profiles.json}, the ordered list of count representatives;
+\item a directory \path{profile-NNN/} for each representative, with
+\path{instance.cnf}, \path{groups.json}, and the original solver report;
+\item either a direct \path{proof.drup}, or a
+\path{diagonal-split/} directory listing all 51 patterns and their child
+inputs and certificates;
+\item terminal \path{certificate-audit.json} records and parent
+\path{profile-certificate-audit.json} records;
+\item \path{independent-audit.json}, which records the complete input,
+coverage, extension, and refutation audit for the weight.
+\end{enumerate}
+The generator, count-input auditor, and proof checker are distinct
+programs. The principal source files are listed by role below.
+\begin{center}\small
+\begin{tabular}{@{}ll@{}}
+\toprule
+Role&Source files\\
+\midrule
+Input generation&\path{solve_count_profiles.py}\\
+&\path{split_diagonal_profiles.py}\\
+Input and coverage audits&\path{audit_count_profiles_native.py}\\
+&\path{audit_count_profiles_adaptive.py}\\
+&\path{profile_certificate_audit.py}\\
+RUP checking&\path{RupCheckNative.cs}\\
+&\path{RupCheckActive.cs}\\
+\bottomrule
+\end{tabular}
+\end{center}
+The three successive stage manifests are
+\begin{center}\small
+\begin{tabular}{@{}ll@{}}
+\toprule
+Weights&Manifest\\
+\midrule
+17--21&\path{count-profile-stage.json}\\
+22--23&\path{adaptive-count-stage.json}\\
+24--25&\path{final-count-stage.json}\\
+\bottomrule
+\end{tabular}
+\end{center}
+\begin{samepage}
+Their combined file manifest is \path{complete-proof-stage.json}.
+Its recorded SHA-256 fingerprint is
+\begin{center}\small\ttfamily
+1d41cffdaf48dbba3be5a0b9f064503bdb64\\
+946b5bf6062b1052af22b2f4da6e
+\end{center}
+where the displayed lines are concatenated without a separator. This
+fingerprint identifies one local manifest; it is not a proof that its
+contents are mathematically sound. The manifest includes fingerprints of
+the actual checker executables and sources as well as the input and proof
+files.
+\end{samepage}
+
+The separate four-color data are
+\path{checks/outputs/q4-strategy.json} and
+\path{checks/outputs/q4-final-verification-20261025.json}. A direct
+configuration verifier, which does not import the SAT encoder, reports
+240 legal configurations and no failure.
+
+\subsection{An explicit enumeration procedure}
+The following finite procedure is sufficient to reconstruct every count
+representative without trusting the original list.
+\begin{enumerate}
+\item For each $n=17,18,\ldots,25$, enumerate all
+$(e_0,\ldots,e_4)\in\mathbb Z_{\geq0}^5$ with total $2n-30$.
+\item Compute $b_j=6+e_j$ and the candidate $a$ by~\eqref{eq:inverse}.
+Reject a nonintegral candidate or one failing~\eqref{eq:A1}--\eqref{eq:A4}.
+\item Form the five shifts of $a$ and the five shifts of its reversal.
+Retain their minimum under~\eqref{eq:canonical}; remove duplicate minima.
+\item Sort the representatives by their five-tuples (ordinary lexicographic
+order), compare with \path{profiles.json}, and check
+the corresponding row of Table~\ref{tab:counts}.
+\end{enumerate}
+Formula~\eqref{eq:inverse} proves that no candidate satisfying the count
+conditions is missed. For the refinement, enumerate all words in
+$\{1,2,3,4\}^5$, replace each word by its first-occurrence labels, remove
+duplicates, and compare the resulting 51 words with the stored list.
+
+\subsection{What an independent replay must establish}
+An independent replay should verify the following logically separate
+requirements.
+\begin{enumerate}
+\item Reconstruct the 125 one-hot answer choices and all 1020 proper
+configurations, and match the exact base formula of every parent input.
+\item Check the semantic identity of each of the five groups of 16 count
+variables, the intended count, the auxiliary-variable boundaries, and the
+absence of unlisted constraints. Establish~\eqref{eq:extension} for every
+actual component type by exhaustive input substitution and direct clause
+evaluation, or by a separately justified encoder proof.
+\item Reconstruct both symmetry actions, the representative list, and
+every selected 51-way refinement. Confirm that a child has exactly the
+parent clauses and its specified diagonal units.
+\item Read every adopted proof, verify every addition by unit propagation,
+and require a checked empty clause. Ignoring all deletion records is
+permitted by Lemma~\ref{lem:rup}; accepting an unchecked addition is not.
+\item Check that all 1413 parents are covered by the 8613 terminal
+certificates, with no unknown or unverified terminal case. Verify the
+four-color lower bound separately, either by the displayed construction
+or by direct evaluation of all 240 configurations.
+\end{enumerate}
+
+The recorded audit scripts implement these checks, but a rerun that merely
+accepts stored cache reports is not a fresh verification of the proof
+steps. For a genuinely fresh replay, each adopted input and proof must be
+passed directly to a checker. In the recorded implementation a terminal
+call has the form
+\begin{center}\small\ttfamily
+RupCheckNative.exe instance.cnf proof.drup
+\end{center}
+and the alternative fast checker has the same arguments. A zero exit code
+is accepted only together with the checked-empty-clause report. A new
+implementation or a separately verified proof checker would give a
+stronger independence guarantee than replaying the same executable.
+
+\subsection{Bookkeeping boundaries}
+Raw solver statuses, interrupted runs, and later replacements are kept
+separate. In particular, some parent reports remain \texttt{UNKNOWN}
+because their exclusion was subsequently obtained from all their refined
+children. Some control-program completion reports were not updated after
+a standard-output encoding error, although the independent mathematical
+audit had already written its completed report. These events are recorded
+separately; they are not treated as refutations. The final selected-input
+and certificate manifest, together with the complete per-weight audit,
+identifies the evidence actually used in the proposed proof.
+
+Source and document snapshots do not duplicate all large certificate
+files. Reproduction therefore requires the original input and certificate
+directories as well as the manuscript sources and manifest. No claim is
+made that the present PDF, on its own, constitutes the complete machine
+certificate archive.
+
+
+\subsection{Historical checks for the earlier 19-page revision}
+The earlier October 26, 2026 revision added checks whose outputs are separate from
+the historical computation. The new standard-library script
+\path{checks/check_mathematics.py} in the preserved
+\path{20261026-rigorous-revision/} manuscript directory does not
+import the old generator or auditor. It enumerates all $3^8=6561$ pairs
+$(\alpha,\beta)$, checks the two-cover classification and all 1440
+resulting tight-support cases, reconstructs the 1413 count representatives,
+and checks all 1024 diagonal words. It also evaluates the displayed
+four-color formula on all 240 proper colorings and reconstructs the
+local witness on all 1020 five-colorings. These are finite cross-checks
+of the text, not substitutes for its general deductions.
+
+During that earlier revision, the existing read-only reproduction tool was run on all 1413 parent
+inputs and all 7344 refined child inputs. Its input audit checked 14
+component types and 65,399 valid input assignments; it uses pure
+functions from the earlier auditor and is not a new independent
+implementation. Fresh proof replay covered the three weight-17 leaves
+and all 51 children of weight-24 parent 317, totaling 54 certificates
+and 351,128 additions. That was a limited replay, not a repeat of all
+66,403,934 historical additions.
+
+The corresponding outputs are in the following directories under
+\path{review/runs/}:
+\begin{center}\small\ttfamily
+20261026-paper-revision-inputs/\\
+20261026-paper-revision-direct-replay/\\
+20261026-paper-revision-split-replay/
+\end{center}
+Each \path{report.json} records its exact command, environment, scope,
+status, and elapsed time. The revision also checks manuscript tables
+against the saved per-weight audit reports. Compilation and page inspection
+are reported separately from all mathematical checks.

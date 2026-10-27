@@ -1,0 +1,236 @@
+[
+  {
+    "original_path": "checks/math-logic-review-20261027/README.md",
+    "snapshot_path": "snapshot/research/checks/math-logic-review-20261027/README.md",
+    "bytes": 13182,
+    "sha256": "2d89f58e8a6f0d2b11a90dfb92f38fa0c439f8574400448b35fb311699a40e38"
+  },
+  {
+    "original_path": "review/catalog/branches.json",
+    "snapshot_path": "snapshot/research/review/catalog/branches.json",
+    "bytes": 475432,
+    "sha256": "80b0c95bb14c3c1a948ac516cb97785bd644f3d1fef9f3c0c240f0e6a39d633d"
+  },
+  {
+    "original_path": "review/runs/20261027-program-audit/checker-review/active-differential.stdout",
+    "snapshot_path": "snapshot/research/review/runs/20261027-program-audit/checker-review/active-differential.stdout",
+    "bytes": 210,
+    "sha256": "dc10dcaeb45334382d038136a2748dc140e475e7b4a31b07ec8247d804d598b6"
+  },
+  {
+    "original_path": "review/runs/20261027-program-audit/checker-review/active-public-report.json",
+    "snapshot_path": "snapshot/research/review/runs/20261027-program-audit/checker-review/active-public-report.json",
+    "bytes": 75022,
+    "sha256": "8a3aa1fe75aaf2f9c80fa32cad7cf7aade0cefb1e939dbf0a8d678466814d99a"
+  },
+  {
+    "original_path": "review/runs/20261027-program-audit/checker-review/differential.stdout",
+    "snapshot_path": "snapshot/research/review/runs/20261027-program-audit/checker-review/differential.stdout",
+    "bytes": 312,
+    "sha256": "09f9e6763daa4d31d891bcf02b57cf1bfd936644e639c3b10bab0d213c5384b9"
+  },
+  {
+    "original_path": "review/runs/20261027-program-audit/checker-review/public-api-report.json",
+    "snapshot_path": "snapshot/research/review/runs/20261027-program-audit/checker-review/public-api-report.json",
+    "bytes": 287128,
+    "sha256": "b8816ec8b47483ea4c429545b02ba3a5a070e331a3effa77af712fafc24ad59d"
+  },
+  {
+    "original_path": "review/runs/20261027-program-audit/final-report.json",
+    "snapshot_path": "snapshot/research/review/runs/20261027-program-audit/final-report.json",
+    "bytes": 3257,
+    "sha256": "e65401d5dbdaac47b78479635660feb343c7dedefadf82dd2edb263d255f026e"
+  },
+  {
+    "original_path": "review/runs/20261027-program-audit/input-audit/auditor-tests.json",
+    "snapshot_path": "snapshot/research/review/runs/20261027-program-audit/input-audit/auditor-tests.json",
+    "bytes": 133380,
+    "sha256": "c9ca84011abd69a0a2db115e84c53782e6f7f244e0f08810a61c264b5c1605f4"
+  },
+  {
+    "original_path": "review/runs/20261027-program-audit/input-audit/cross-link-report.json",
+    "snapshot_path": "snapshot/research/review/runs/20261027-program-audit/input-audit/cross-link-report.json",
+    "bytes": 2325,
+    "sha256": "3f79fa4d833f557139338503ce7becf29b9d9e34e9f9737f3bcd8701c563edea"
+  },
+  {
+    "original_path": "review/runs/20261027-program-audit/input-audit/first-run-report.json",
+    "snapshot_path": "snapshot/research/review/runs/20261027-program-audit/input-audit/first-run-report.json",
+    "bytes": 2805,
+    "sha256": "a654ef502eb94856dfd1382eee1bd8ca4f0cda95db7f9f55d654cb5232888660"
+  },
+  {
+    "original_path": "review/runs/20261027-program-audit/input-audit/input-files.jsonl",
+    "snapshot_path": "snapshot/research/review/runs/20261027-program-audit/input-audit/input-files.jsonl",
+    "bytes": 2628213,
+    "sha256": "ffc32d6f1b945ecb6f9d7fb3becff5ec045c8caf618f37c99ef831e14475f491"
+  },
+  {
+    "original_path": "review/runs/20261027-program-audit/input-audit/report.json",
+    "snapshot_path": "snapshot/research/review/runs/20261027-program-audit/input-audit/report.json",
+    "bytes": 6326,
+    "sha256": "e7ded2102c319810917d850c608cb74348bc277543db59545c41aa0e9a87b4b7"
+  },
+  {
+    "original_path": "review/runs/20261027-program-audit/local-structure-report.json",
+    "snapshot_path": "snapshot/research/review/runs/20261027-program-audit/local-structure-report.json",
+    "bytes": 909,
+    "sha256": "5d75d4c8ee822e8af75552ad51341ac64028b2ea247bab3f18260e6cd05889e0"
+  },
+  {
+    "original_path": "review/runs/20261027-program-audit/replay/batch-0.tsv",
+    "snapshot_path": "snapshot/research/review/runs/20261027-program-audit/replay/batch-0.tsv",
+    "bytes": 368964,
+    "sha256": "b63c82b877092172c8c689aeb35195e256921b6d41cc83ace8fc093ce529274e"
+  },
+  {
+    "original_path": "review/runs/20261027-program-audit/replay/batch-1.tsv",
+    "snapshot_path": "snapshot/research/review/runs/20261027-program-audit/replay/batch-1.tsv",
+    "bytes": 368906,
+    "sha256": "7087d656402050a559404c86849d7c9f78ce55ad6fa6c7f147a0e6493152e768"
+  },
+  {
+    "original_path": "review/runs/20261027-program-audit/replay/batch-2.tsv",
+    "snapshot_path": "snapshot/research/review/runs/20261027-program-audit/replay/batch-2.tsv",
+    "bytes": 367471,
+    "sha256": "3f1bed1ae0ddbe40d428ae273d9a79e06df1353390f7d6b43259fb906b1b19ac"
+  },
+  {
+    "original_path": "review/runs/20261027-program-audit/replay/batch-3.tsv",
+    "snapshot_path": "snapshot/research/review/runs/20261027-program-audit/replay/batch-3.tsv",
+    "bytes": 369096,
+    "sha256": "59aea85756507d8552f82779ea9cb3d51bc8a1fe34cc7a1b7155213b7bd017d7"
+  },
+  {
+    "original_path": "review/runs/20261027-program-audit/replay/batch-4.tsv",
+    "snapshot_path": "snapshot/research/review/runs/20261027-program-audit/replay/batch-4.tsv",
+    "bytes": 368076,
+    "sha256": "c6119ebd7cc21e8866381e4ba915b0a36c03905669f5f8b75e02fe8eb620cbf3"
+  },
+  {
+    "original_path": "review/runs/20261027-program-audit/replay/batch-5.tsv",
+    "snapshot_path": "snapshot/research/review/runs/20261027-program-audit/replay/batch-5.tsv",
+    "bytes": 368936,
+    "sha256": "2d1f3d64455ee24180516bae9ea63bf4c00eddea3de4f99a5274b8fd9bca799a"
+  },
+  {
+    "original_path": "review/runs/20261027-program-audit/replay/batch-6.tsv",
+    "snapshot_path": "snapshot/research/review/runs/20261027-program-audit/replay/batch-6.tsv",
+    "bytes": 368630,
+    "sha256": "1b26f0dd7ece070546f3454be0a1d0fc87896d6c842665f07b2ab1d7f413bb75"
+  },
+  {
+    "original_path": "review/runs/20261027-program-audit/replay/batch-7.tsv",
+    "snapshot_path": "snapshot/research/review/runs/20261027-program-audit/replay/batch-7.tsv",
+    "bytes": 369752,
+    "sha256": "b604a7d1e8357b9798d185b7744467eaf940d2122855ac82a3eaec6df1b9b2e0"
+  },
+  {
+    "original_path": "review/runs/20261027-program-audit/replay/checked-files.jsonl",
+    "snapshot_path": "snapshot/research/review/runs/20261027-program-audit/replay/checked-files.jsonl",
+    "bytes": 4527324,
+    "sha256": "708a231bfadefe24ca89d9b888a02ffacbd85a7673d99a4762c0659436dc32b9"
+  },
+  {
+    "original_path": "review/runs/20261027-program-audit/replay/fresh-leaf-results.jsonl",
+    "snapshot_path": "snapshot/research/review/runs/20261027-program-audit/replay/fresh-leaf-results.jsonl",
+    "bytes": 4969256,
+    "sha256": "74466aa3aed273458ea00ab553d474b9ade4d3b32df23813b43919824f353b9a"
+  },
+  {
+    "original_path": "review/runs/20261027-program-audit/replay/prepare-report.json",
+    "snapshot_path": "snapshot/research/review/runs/20261027-program-audit/replay/prepare-report.json",
+    "bytes": 2063,
+    "sha256": "3d4c97b999ec1782a7452bd7899aaf8d783231fd783ce99268bfb9426e966034"
+  },
+  {
+    "original_path": "review/runs/20261027-program-audit/replay/replay-0.tsv",
+    "snapshot_path": "snapshot/research/review/runs/20261027-program-audit/replay/replay-0.tsv",
+    "bytes": 41058,
+    "sha256": "56435232ecf5a2dcddac1703861dbf2f2184f3a3dbe3b872fb17da848e6bb55b"
+  },
+  {
+    "original_path": "review/runs/20261027-program-audit/replay/replay-1.tsv",
+    "snapshot_path": "snapshot/research/review/runs/20261027-program-audit/replay/replay-1.tsv",
+    "bytes": 41112,
+    "sha256": "ac56fbf56fe0c6ed7b9c03ef965dcf198ff25581a0553e1521bf8421a8ac59a4"
+  },
+  {
+    "original_path": "review/runs/20261027-program-audit/replay/replay-2.tsv",
+    "snapshot_path": "snapshot/research/review/runs/20261027-program-audit/replay/replay-2.tsv",
+    "bytes": 41196,
+    "sha256": "23916c6822b7e69caa0473914930092c7be22812f6e3ca2cd43d6e34482106af"
+  },
+  {
+    "original_path": "review/runs/20261027-program-audit/replay/replay-3.tsv",
+    "snapshot_path": "snapshot/research/review/runs/20261027-program-audit/replay/replay-3.tsv",
+    "bytes": 41213,
+    "sha256": "620038ffe77404e2743102ce4651f2302f2c355c44b4e70b9d20ce4e1c64c5a3"
+  },
+  {
+    "original_path": "review/runs/20261027-program-audit/replay/replay-4.tsv",
+    "snapshot_path": "snapshot/research/review/runs/20261027-program-audit/replay/replay-4.tsv",
+    "bytes": 41236,
+    "sha256": "7a66d9bdc8743a532a82df2a413a4174a652faae6a880c276a4873b671b5ec68"
+  },
+  {
+    "original_path": "review/runs/20261027-program-audit/replay/replay-5.tsv",
+    "snapshot_path": "snapshot/research/review/runs/20261027-program-audit/replay/replay-5.tsv",
+    "bytes": 41252,
+    "sha256": "6f19c7c1c12f28fdd15aa51c9a7e59bc985c379d9b9c44eaa4b9a3399c239233"
+  },
+  {
+    "original_path": "review/runs/20261027-program-audit/replay/replay-6.tsv",
+    "snapshot_path": "snapshot/research/review/runs/20261027-program-audit/replay/replay-6.tsv",
+    "bytes": 41271,
+    "sha256": "f5cbfdb416c53368db5dfc3f131bb4f4a75c915a9e82460cfe96243f536fa348"
+  },
+  {
+    "original_path": "review/runs/20261027-program-audit/replay/replay-7.tsv",
+    "snapshot_path": "snapshot/research/review/runs/20261027-program-audit/replay/replay-7.tsv",
+    "bytes": 41243,
+    "sha256": "2bbdcfc534933f0751ef343929c3f765f6c9eddaf18df155e772f1edc6b017ce"
+  },
+  {
+    "original_path": "review/runs/20261027-program-audit/replay/replay-report.json",
+    "snapshot_path": "snapshot/research/review/runs/20261027-program-audit/replay/replay-report.json",
+    "bytes": 7048,
+    "sha256": "fbb479faa407986df8cbe77b504e29b2b912e76257f7ee6291789e64d25e33ce"
+  },
+  {
+    "original_path": "review/runs/20261027-program-audit/replay/selected-leaves.jsonl",
+    "snapshot_path": "snapshot/research/review/runs/20261027-program-audit/replay/selected-leaves.jsonl",
+    "bytes": 6209206,
+    "sha256": "a6988cf6984b3e7ce1c215787919141570f19c6412658b1c1588fdd73a2665ab"
+  },
+  {
+    "original_path": "review/runs/20261027-program-audit/rup-checker/active-checker-tests.json",
+    "snapshot_path": "snapshot/research/review/runs/20261027-program-audit/rup-checker/active-checker-tests.json",
+    "bytes": 163368,
+    "sha256": "bf95c756e8b8ec89c62a54a01f1bcf66b1936bb98bdbc6d6f2c64aa682efe859"
+  },
+  {
+    "original_path": "review/runs/20261027-program-audit/rup-checker/active-sample-replay.json",
+    "snapshot_path": "snapshot/research/review/runs/20261027-program-audit/rup-checker/active-sample-replay.json",
+    "bytes": 3508,
+    "sha256": "a63070e1b03977d622f914903912b944cc596d40a264fb0bf1d7825a408cefcb"
+  },
+  {
+    "original_path": "review/runs/20261027-program-audit/rup-checker/checker-tests.json",
+    "snapshot_path": "snapshot/research/review/runs/20261027-program-audit/rup-checker/checker-tests.json",
+    "bytes": 138165,
+    "sha256": "84848ceb70e953de3db99bac0b98ad88eebf9ef5282babf4d84b288e4356b387"
+  },
+  {
+    "original_path": "review/runs/20261027-program-audit/rup-checker/sample-replay.json",
+    "snapshot_path": "snapshot/research/review/runs/20261027-program-audit/rup-checker/sample-replay.json",
+    "bytes": 1544,
+    "sha256": "19b3a57f08562f7b5e782d05b60f62e070a3fb704dbf55c7115c3663363ec5fe"
+  },
+  {
+    "original_path": "review/runs/20261027-program-audit/source-provenance.json",
+    "snapshot_path": "snapshot/research/review/runs/20261027-program-audit/source-provenance.json",
+    "bytes": 2934,
+    "sha256": "cb1d33874efc951b90e1de0b7aeab20ffa0cff7cad7cbd8f7f756b1c755afdcd"
+  }
+]

@@ -1,0 +1,92 @@
+\section{The complete audit record}\label{app:audit}
+The full reimplementation audit is separate from the earlier revision's
+54-certificate replay. Its raw outputs remain in
+\begin{quote}\small\raggedright
+\path{checks/independent-review-20261026/}.
+\end{quote}
+A frozen, organized copy is provided at
+\begin{quote}\small\raggedright
+\path{review/audits/20261026-full-replay/}.
+\end{quote}
+Paths here are relative to the research root. The organized package
+contains 372 original audit files copied byte for byte, the adopted
+parent and terminal indexes, a joined per-leaf audit ledger, and new
+reproduction instructions. Packaging these records is distinct from
+running the audit again.
+
+\begin{samepage}
+\subsection{Records and their roles}
+The package root contains a Chinese audit report and manuscript revision
+notes. Its principal machine-readable files are listed below.
+\begin{center}\small
+\begin{tabular}{@{}p{5.7cm}p{8.5cm}@{}}
+\toprule
+File&Role\\
+\midrule
+\path{data/summary.json}&Scope and aggregate counts of the completed audit.\\[3pt]
+\path{data/leaf-audit.jsonl}&One record for each of the 8613 adopted leaves,
+joining the input/proof paths and hashes to its fresh replay result.\\[3pt]
+\path{data/weight-summary.json}&Counts, checked additions, and full
+fallbacks at each weight.\\[3pt]
+\path{data/branches.json}&All 1413 parents, count vectors, and refinement choices.\\[3pt]
+\path{raw/replay-0.tsv}--\path{raw/replay-3.tsv}&Original per-leaf outputs
+from the four checking processes.\\[3pt]
+\path{raw/inputs-report.json}&All parent/child input and auxiliary-extension checks.\\[3pt]
+\path{raw/source-change-audit.json}&Recorded comparison of the two input-auditor source snapshots.\\[3pt]
+\path{package-manifest.json}&Sizes and SHA-256 hashes of the packaged
+files; the manifest itself is excluded from its own list.\\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{samepage}
+The four checking processes finished successfully. Each output row was
+written only after that proof reached its checked empty clause. The
+summary then verified equality with the adopted terminal list and the
+expected per-leaf addition counts. Durations recorded per leaf include
+any complete fallback; their sum is not the wall time of the parallel run.
+
+\subsection{Source provenance and implementation checks}
+The new checker is \path{RupAudit.cs}; its SHA-256 is
+\begin{center}\small\ttfamily
+8ddc76a5a8a154bc32ee16668f50d5259e7\\
+bc9cb669cce6c68205ffd618f8344.
+\end{center}
+The displayed lines are concatenated without the final punctuation.
+The full audit uses this checker, not the experimental
+\path{RupAuditRoot.cs} variant, which is retained only as a separate trial.
+The original audit environment was Windows 11, Python 3.13.0, and the
+Microsoft .NET Framework C\# compiler. No SAT library was imported by
+the new auditor or checker. The main enumerations and replays are
+deterministic; seed 20261026 applies only to the 150 comparison tests.
+
+One source-provenance detail is recorded explicitly. The input-audit
+process started with the source now saved as \path{review-initial.py}.
+While it ran, only the count-list comparison in a different function,
+\texttt{local\_math}, was corrected: the initial test had confused the
+representative-selection key with the list's serialization order.
+The input-audit report read its source hash from disk at process exit,
+so that field identifies the corrected file rather than the file loaded
+at process start. Both snapshots are retained. A subsequent syntax-tree
+comparison confirms that \texttt{inputs} and all its helpers are identical
+between them. The discrepancy is a provenance issue in the report, not
+an omitted input check; it should not be concealed by rewriting the old
+report's hash.
+
+\subsection{Reproduction with new output directories}
+The organized package's \path{tools/verify_package.py} checks its own
+file inventory and hashes and the recorded audit totals. It does not
+recheck mathematical inferences. The separate \path{tools/replay.py}
+accepts an explicit research-root directory and a fresh output directory,
+recompiles the preserved checker, checks selected input/proof hashes,
+and passes the actual files to it. It records new compiler output,
+commands, fingerprints, per-leaf results, and a scope-limited report.
+Its \texttt{--full} option selects all leaves; weight, profile, and limit
+options permit smaller checks whose reports remain explicitly limited.
+The original run files and batch paths are preserved as historical data.
+
+The compact audit package contains code, tests, reports, hashes, and
+evidence indexes. The 6,585,642,510 bytes of terminal CNF and proof files
+remain in the research archive at the indexed relative paths. They are
+required for proof replay and are not embedded in the compact package
+or the manuscript source archive. Hash matching alone establishes
+integrity, not the correctness of the mathematical argument.

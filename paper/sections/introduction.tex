@@ -1,0 +1,136 @@
+\section{Introduction and the main result}\label{sec:introduction}
+In the proper hat-guessing game, the players occupy the vertices of a graph.
+Adjacent players must wear different colors. Each player sees the colors
+of its neighbors and guesses its own color; all guesses are made
+simultaneously, and the players win if at least one guess is correct.
+A winning strategy must work for every permitted assignment of hats.
+Adriaensen et al.\ introduced this variant and the parameter $\HG(G)$
+in~\cite{proper}. Table~1 of the inspected version~4 gives
+$4\leq\HG(C_5)\leq5$. We settle this particular alternative by excluding
+five colors and recalling an explicit four-color strategy.
+
+Related developments include general upper bounds in terms of order and
+maximum degree~\cite{kakatelis}, and coverability methods and exact results
+for two-spine book graphs~\cite{zhai}. Here we focus on the five-cycle
+and the alternative recorded in Table~1 of the cited version of~\cite{proper}.
+
+\begin{theorem}[Main theorem; computer-assisted]\label{thm:main}
+The proper hat-guessing number of the five-cycle is
+\[
+\HG(C_5)=4.
+\]
+\end{theorem}
+
+The players may use different rules and distinguish left from right.
+Their rules need not be invariant under any permutation of vertices or
+colors. Nonadjacent hats may agree, and a permitted configuration need
+not use all five colors. Thus the task is to exclude the entire local
+strategy space, rather than a symmetric family of candidate rules.
+
+\subsection{The idea of the proof}
+There are five strategy tables, each with $5^2=25$ ordered observations.
+A guess equal to a neighbor's color is always wrong and can be replaced
+without losing any previously correct guess. After this normalization,
+each of the 125 table entries contributes to exactly one color's count.
+Some color $z$ is therefore guessed on at most 25 entries. Write $S(z)$
+for this count; it counts table entries, not successful configurations.
+
+To bound $S(z)$ below, consider configurations in which $z$ occurs twice.
+The two players wearing $z$ are nonadjacent. Once the answers of the other
+three players are fixed, the pairs of colors they miss form a small
+bipartite graph. Its vertex covers describe which entries of the two
+remaining tables must guess $z$. Every relevant slice needs at least two
+such entries, giving a pairwise bound. Classifying when equality is
+possible rules out total counts 15 and 16, and yields $S(z)\geq17$.
+This is the combinatorial part of the argument.
+
+The remaining work is finite, but the reduction still needs justification.
+Vertex relabeling gives 1413 representatives of the necessary five-player
+count vectors with $17\leq S(z)\leq25$. These vectors fix only counts,
+not the positions of entries or the remaining answers. Each representative
+becomes a Boolean formula describing all still-possible winning strategies.
+A direct refutation suffices for 1269 representatives. The other 144 are
+refined into 51 color-equality patterns each, giving
+\[
+1269+144\cdot51=8613
+\]
+terminal formulas. Each has a checked refutation. The choice of which
+parents to refine affects computational cost, not the required coverage.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+ stage/.style={draw,rounded corners=2pt,align=center,text width=11.8cm,
+                inner sep=5pt,font=\small},
+ proofarrow/.style={-{Latex[length=2mm]},thick},node distance=7mm]
+\node[stage] (strategy) {Assume a five-color winning strategy exists.};
+\node[stage,below=of strategy] (count)
+ {Normalize, select and relabel a color; choose a count representative\\
+ $17\leq S(5)\leq25$ and $a\in\calR_{S(5)}$.};
+\node[stage,below=of count] (formula)
+ {Choose a direct parent or a color-equivalent diagonal subcase;\\
+ extend its strategy assignment to the actual terminal CNF.};
+\node[stage,below=of formula] (conflict)
+ {That CNF would be satisfiable, but its checked RUP refutation\\
+ derives the empty clause. Contradiction.};
+\draw[proofarrow] (strategy)--(count);
+\draw[proofarrow] (count)--(formula);
+\draw[proofarrow] (formula)--(conflict);
+\end{tikzpicture}
+\caption{The route from an arbitrary strategy to a contradiction.
+The reductions preserve a hypothetical winning strategy; the input audit
+checks that the generated clauses preserve its satisfying extension.}
+\label{fig:proof-route}
+\end{figure}
+
+\subsection{What has to be checked}
+The proof has three obligations. Keeping them separate makes clear both
+what the computer establishes and why that establishes a result about hats.
+\begin{enumerate}
+\item \emph{Coverage.} Every hypothetical winning strategy has an
+ equivalent representative in a listed branch. The mathematical
+ reductions are proved in Sections~\ref{sec:preliminaries}--\ref{sec:classification}.
+\item \emph{Preservation.} The representative extends to a satisfying
+ assignment of the actual branch input. Section~\ref{sec:encoding}
+ proves the logical criterion and explains the exhaustive check of the
+ generated auxiliary components.
+\item \emph{Exclusion.} Every terminal input has a valid refutation.
+ Section~\ref{sec:certificates} proves the soundness of the inference
+ rule and states the finite assertion verified on the saved files.
+\end{enumerate}
+A solver's answer alone cannot establish these three facts. In particular,
+a refutation of an incorrectly restricted formula would not exclude all
+strategies. Section~\ref{sec:conclusion} assembles the three obligations
+into the proof of Theorem~\ref{thm:main}.
+
+The switch from a local argument to the full encoding is necessary for
+this approach. Appendix~\ref{app:witness} exhibits a strategy with
+$S(5)=17$ that wins on all configurations with two hats of color 5, yet
+loses on configurations with zero or one such hat. The full formula
+therefore includes all 1020 proper five-colorings, not just the
+240 configurations used to obtain the combinatorial lower bound.
+
+\subsection{Evidence and reading guide}
+The complete computational audit reported here is the run of
+27 October 2026: a new input auditor checked every parent and child
+formula, and the frozen \texttt{FreshRup} checker replayed every adopted
+terminal proof. Appendix~\ref{app:reproduction} gives the versioned
+material list and executable reproduction steps;
+Appendix~\ref{app:audit} identifies the run records, file fingerprints,
+implementation tests and their precise scope. It distinguishes this
+full replay from the smaller checks performed while packaging the evidence.
+
+A reader interested primarily in the mathematics can follow
+Sections~\ref{sec:preliminaries}--\ref{sec:encoding}, the RUP soundness
+lemma, and the final deduction, treating the explicitly stated finite
+verification as the computational premise. A reproducer should then
+check the actual input files and complete terminal set, using the
+appendix rather than saved success summaries as a substitute for running
+the checks.
+
+Separate implementations were used within the same AI-assisted workflow.
+They are not independent human peer reviewers, and the checker has not
+been formally verified. This paper makes no claim of an exhaustive
+novelty search: its comparison with~\cite{proper} refers specifically to
+the cited version. The evidence is staged for coordinated public release with this
+preprint, as described at the end of Section~\ref{sec:conclusion}.

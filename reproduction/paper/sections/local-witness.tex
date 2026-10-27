@@ -1,0 +1,77 @@
+\section{A local optimum that is not a full winning strategy}\label{app:witness}
+This example comes from the saved two-occurrence experiment of
+October 24, 2026 (research Lemma L010). It explains why the local bound
+17 and the subsequent exclusions for the full game concern different
+requirements. It is not used as a premise of any branch refutation.
+
+Put $z=5$ and $S=\{1,2,3,4\}$. For each player let
+\[
+P_i=\{(a,b)\in S^2:f_i(a,b)=5\},\quad
+A_i(w)=f_i(5,w),\quad B_i(v)=f_i(v,5),\quad t_i=f_i(5,5).
+\]
+The four entries of each $A_i$ and $B_i$ are listed in the order
+$1,2,3,4$. The following data specify every entry involving color 5 and
+every old observation whose answer is 5:
+\begin{center}\small
+\begin{tabular}{@{}clccc@{}}
+\toprule
+$i$&$P_i$&$A_i$&$B_i$&$t_i$\\
+\midrule
+1&$\{(1,2),(2,2)\}$&$(3,3,1,1)$&$(2,4,1,1)$&1\\
+2&$\{(3,1),(3,3)\}$&$(3,3,4,1)$&$(2,4,4,2)$&4\\
+3&$\{(1,3),(1,4),(3,3),(3,4)\}$&$(2,4,4,2)$&$(3,4,4,1)$&4\\
+4&$\{(1,3),(2,1),(2,2),(2,3),(3,3)\}$&$(2,1,1,2)$&$(3,3,1,1)$&1\\
+5&$\{(2,2),(2,4),(4,2),(4,4)\}$&$(2,4,4,1)$&$(4,3,4,3)$&4\\
+\bottomrule
+\end{tabular}
+\end{center}
+For $(a,b)\in S^2\setminus P_i$, complete the table by
+$f_i(a,b)=\min(S\setminus\{a,b\})$. This set is nonempty, and all
+125 entries are now specified. Direct inspection of the displayed data
+shows that every answer differs from its observed neighbor colors.
+The special-color counts are $(2,2,4,5,4)$, whose sum is 17.
+
+Here is a finite check stated without dependence on a SAT solver.
+For each nonadjacent pair $i,i+2$, examine all
+$u,v,w\in S$ with $v\ne w$. There are $4\cdot4\cdot3=48$
+triples for each of five pairs. In each triple, at least one of
+\[
+u=t_{i+1},\quad A_{i+3}(w)=v,\quad B_{i+4}(v)=w,\quad
+(w,u)\in P_i,\quad(u,v)\in P_{i+2}
+\]
+holds. The revision check enumerates these 240 triples directly and also
+compares all 125 reconstructed answers with the saved JSON tables.
+Together with the hand lower bound in Proposition~\ref{prop:seventeen},
+this finite witness check establishes the local optimum 17 for the
+two-occurrence requirement.
+
+The same direct evaluation over all 1020 proper colorings gives:
+\begin{center}
+\begin{tabular}{@{}crrr@{}}
+\toprule
+Occurrences of color 5&0&1&2\\
+\midrule
+Proper colorings&240&540&240\\
+All five guesses wrong&35&55&0\\
+\bottomrule
+\end{tabular}
+\end{center}
+For example, $(2,3,2,3,4)$ is proper and produces the five guesses
+$(1,1,5,1,1)$, so every player is wrong. This refutes the claim that
+this particular completion is winning on the full game. It does not
+exclude every completion of its sets $P_i$, or every strategy with total
+17. Those are stronger assertions requiring their own evidence. The
+full-game count branches avoid this distinction by retaining all 1020
+coverage clauses and allowing every table position to vary.
+
+The original files are \path{strategy.json} and
+\path{independent-verification.json} in the directory
+\begin{quote}\small\raggedright
+\path{attempts/A001-v4-extension/checks/outputs/double-layer-bound17/}
+\end{quote}
+The earlier revision's check is preserved in
+\path{20261026-rigorous-revision/checks/mathematical-review.json}
+under \path{paper/versions/}. The full audit's new witness check is
+recorded in \path{raw/math-report.json} and
+\path{raw/supplement-report.json} in the package described in
+Appendix~\ref{app:audit}.

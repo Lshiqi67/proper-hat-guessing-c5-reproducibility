@@ -1,0 +1,95 @@
+\section{Introduction and the main result}
+In the proper hat-guessing game, the players occupy the vertices of a graph,
+and the adversary assigns colors subject to the condition that adjacent
+vertices receive different colors. Each player observes the colors of its
+neighbors and simultaneously guesses its own color. A strategy is winning
+if at least one guess is correct for every permitted assignment.
+Adriaensen et al.\ introduced this variant and its parameter
+$\HG(G)$ in~\cite{proper}. Their Table~1, in version~4, records
+$4\leq\HG(C_5)\leq5$.
+The task considered here is precisely to decide between these two values.
+The four-color construction is short; the five-color exclusion is the
+part that requires the finite computation.
+
+This manuscript develops a computer-assisted argument for the following
+assertion.
+\begin{theorem}[Main theorem; computer-assisted]\label{thm:main}
+The proper hat-guessing number of the five-cycle is
+\[
+\HG(C_5)=4.
+\]
+\end{theorem}
+
+The nonexistence argument concerns five arbitrary local functions. It does
+not assume that the players use the same rule, that left and right are
+interchangeable, or that a strategy is invariant under permutations of the
+vertices or colors. Symmetries are used only to select representatives of
+equivalent candidates.
+
+The principal statistic is the number of local observations on which a
+fixed color is guessed. There are 125 entries in the five strategy tables.
+After discarding guesses that can never be correct, at least one color is
+guessed on at most 25 entries. Configurations in which this color occurs
+twice force its total count to be at least 17 and impose restrictions on
+the five individual counts. The resulting finite classification has
+1413 representatives. Some representatives are refined using equality
+patterns of five diagonal answers, producing 8613 terminal Boolean
+formulas. The original local computation supplies a refutation of every
+terminal formula. The subsequent complete audit replays each refutation
+with a new checker and separately rechecks that the actual inputs and
+branching rules preserve every candidate winning strategy.
+
+\subsection*{Why the argument has two parts}
+Fix a color and first consider only proper colorings in which it appears
+twice. This restricted family makes the interaction between two strategy
+tables visible and yields the lower bound 17. It does not characterize
+winning strategies for the whole game: a saved strategy attains 17 on
+this family but loses on colorings in the other two families. We include
+that witness in Appendix~\ref{app:witness}, so the change from a local
+combinatorial argument to a full Boolean model has an explicit reason.
+
+The proof has three obligations, each with a different kind of evidence:
+\begin{enumerate}
+\item \emph{Coverage:} every hypothetical winning strategy can be
+transformed into a listed branch. Sections~\ref{sec:local}
+and~\ref{sec:classification} give the mathematical reductions.
+\item \emph{Input preservation:} that strategy would satisfy the actual
+branch formula after suitable auxiliary variables are assigned.
+Section~\ref{sec:encoding} specifies the encoding and this extension check.
+\item \emph{Exclusion:} each terminal formula has a valid refutation.
+Section~\ref{sec:certificates} gives the inference rule and identifies the
+recorded finite verification on which the conclusion depends.
+\end{enumerate}
+A refutation alone establishes only the last obligation. Conversely, a
+complete list of branches does not establish that any branch is impossible.
+
+The organization follows this logical dependence rather than the
+chronological order of the experiments. Section~\ref{sec:preliminaries}
+fixes the model and normalization. Section~\ref{sec:local} proves the
+combinatorial count restrictions. Section~\ref{sec:classification}
+establishes the complete finite classification.
+Sections~\ref{sec:encoding} and~\ref{sec:certificates} explain the Boolean
+encoding and certificate checks. Section~\ref{sec:conclusion} gives the
+final deduction. Appendix~\ref{app:reproduction} connects the numbered
+results to the organized research archive and gives a procedure for
+independent reproduction.
+
+\subsection*{Status of this manuscript}
+This manuscript was prepared with computer and AI assistance. On
+October 26, 2026, a new input auditor and a new RUP checker completed a
+full local audit of the adopted evidence. The combinatorial arguments
+were also examined, with exhaustive finite cross-checks; no error
+affecting the main conclusion was found in that audit. Its precise scope
+is given in Section~\ref{sec:full-audit} and Appendix~\ref{app:audit}.
+
+Here ``independent implementation'' means separate code, not independent
+human authorship or external peer review. The new auditor imports no
+earlier generator or auditor, and the new checker was written before
+the earlier checker sources were inspected. All implementations were
+nevertheless developed within the same AI-assisted workflow. The
+mathematical argument, source-to-model correspondence, and checking
+software remain open to external scrutiny; no proof-assistant
+verification is claimed. Bibliographic statements about~\cite{proper}
+refer to the inspected version, not to an exhaustive assessment of
+subsequent literature.
+

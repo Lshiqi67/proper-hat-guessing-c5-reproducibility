@@ -1,0 +1,74 @@
+{
+  "source_files": [
+    {
+      "path": "main.tex",
+      "bytes": 3594,
+      "sha256": "76c71a40419fad6bd50742153cac0de88394dcd733c9a7a5a8abf3943419c15b"
+    },
+    {
+      "path": "references.tex",
+      "bytes": 1271,
+      "sha256": "e165930713c716a0e572ef663a8db63e3d0c35a6898154ee556a9bb3de5a90e7"
+    },
+    {
+      "path": "sections/audit-record.tex",
+      "bytes": 9182,
+      "sha256": "cfebf8834b13b60627c06d0da9cb311a60c04a63f7788a3901067a7529be21c9"
+    },
+    {
+      "path": "sections/certificates.tex",
+      "bytes": 8493,
+      "sha256": "33a5948d4c344e271be33ae5231310e079de2d5b4280527de58b91ed5be3a78b"
+    },
+    {
+      "path": "sections/classification.tex",
+      "bytes": 9058,
+      "sha256": "99fcb05df1b4807ff465712adda4009b80c41d388c00a270096244d87bb8be61"
+    },
+    {
+      "path": "sections/conclusion.tex",
+      "bytes": 6635,
+      "sha256": "b191f2612c25571d06ef9392316fc79bbf56ebda67903e88b7cf4d38e37c4cb5"
+    },
+    {
+      "path": "sections/encoding.tex",
+      "bytes": 9070,
+      "sha256": "1a57af9237b8a9ad2057c470ab9dfb2a0c0f049226d2a54bd562d75cdce4f30a"
+    },
+    {
+      "path": "sections/introduction.tex",
+      "bytes": 7449,
+      "sha256": "6023c7735e39fb0c7e97465b047f56af1549aa7bee2c45a85dc4263bd8217fa1"
+    },
+    {
+      "path": "sections/local-counts.tex",
+      "bytes": 13334,
+      "sha256": "9269ff3ac9dfc83e73d5df3becab24bcc5a9dd443e27d245d69a03e7d7b361bf"
+    },
+    {
+      "path": "sections/local-witness.tex",
+      "bytes": 4264,
+      "sha256": "6e7b6cb7c6adfd840674c9315fab943ccc0b4e34e66211f7a6796d6a6fd30829"
+    },
+    {
+      "path": "sections/preliminaries.tex",
+      "bytes": 7407,
+      "sha256": "ee032d2e3a534d8cbb7171caca8d4ebfbdcf71cb6ca84517ca3ae6960a4c191d"
+    },
+    {
+      "path": "sections/reproducibility.tex",
+      "bytes": 8110,
+      "sha256": "31a39dd8081afa3576e0483dd4a6debe7016abadf77d189959f5bfcc81cfe554"
+    },
+    {
+      "path": "generated/audit-table.tex",
+      "bytes": 493,
+      "sha256": "242e880727709ea02e521dba811ce853ba5b859e2d7f5b45a4ecc36538a1b3a1"
+    }
+  ],
+  "zip": {
+    "path": "output\\c5-arxiv-source-20261027.zip",
+    "bytes": 39898,
+    "sha256": "55145693ae29493e9456c5c9cd47a35678ce40e5ad42ede6018773908e023674"
+  }
+}

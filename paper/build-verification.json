@@ -1,0 +1,87 @@
+{
+  "checked_at": "2026-10-27T23:25:05.388681+08:00",
+  "environment": {
+    "platform": "Windows",
+    "tex": "TeX Live 2024, pdfLaTeX",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]"
+  },
+  "pages": 23,
+  "warnings_or_box_problems": [],
+  "isolated_warnings_or_box_problems": [],
+  "isolated_page_texts_identical": true,
+  "tex_files": 13,
+  "labels": 62,
+  "references": 109,
+  "bibliography_keys": [
+    "proper",
+    "kakatelis",
+    "zhai",
+    "pysat",
+    "drat"
+  ],
+  "abstract_characters": 1252,
+  "protected_content": {
+    "proof_blocks": {
+      "count": 20,
+      "unchanged": true
+    },
+    "display_math": {
+      "count": 25,
+      "unchanged": true
+    },
+    "verbatim_commands": {
+      "count": 3,
+      "unchanged": true
+    },
+    "theorem_blocks": {
+      "count": 21,
+      "unchanged": true
+    }
+  },
+  "byte_identical_math_files": [
+    "generated/audit-table.tex",
+    "sections/audit-record.tex",
+    "sections/certificates.tex",
+    "sections/classification.tex",
+    "sections/encoding.tex",
+    "sections/local-counts.tex",
+    "sections/local-witness.tex",
+    "sections/preliminaries.tex"
+  ],
+  "pdf_sha256": "170e5f40b5cd0695997760935df38ba8097be07b179c7d4f48ecc597231749e7",
+  "source_zip_sha256": "55145693ae29493e9456c5c9cd47a35678ce40e5ad42ede6018773908e023674",
+  "scope": "Document, packaging and source-preservation checks only; no SAT search or full RUP replay.",
+  "commands": [
+    {
+      "command": [
+        "pdflatex",
+        "-no-shell-escape",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "main.tex"
+      ],
+      "passes": 2,
+      "location": "candidate source directory"
+    },
+    {
+      "command": [
+        "pdflatex",
+        "-no-shell-escape",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "main.tex"
+      ],
+      "passes": 2,
+      "location": "fresh isolated ZIP extraction"
+    }
+  ],
+  "visual_review": {
+    "pages": 23,
+    "performed_by": "AI-assisted manuscript review",
+    "reported_result": "All rendered pages inspected; no clipping, overlap or unreadable elements found."
+  },
+  "arxiv_server_build_performed": false,
+  "arxiv_submitted": false
+}

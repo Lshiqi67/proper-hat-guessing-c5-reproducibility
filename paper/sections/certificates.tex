@@ -1,0 +1,154 @@
+\section{Refutations and the finite verification}\label{sec:certificates}
+A SAT solver is used to find a refutation; a separate checker establishes
+that the saved refutation is valid for the saved input. The distinction is
+useful because the search may be complicated, whereas the inference rule
+checked at each proof step is elementary. The complete computation used
+here has three outputs: a covering list of branches, validated Boolean
+inputs for those branches, and a checked refutation for each terminal input.
+
+\subsection{What one proof step means}
+Given clauses $D$, \emph{unit propagation} repeatedly sets the sole
+unassigned literal of a clause to true when its other literals are false.
+An empty clause or conflicting forced assignments gives a contradiction.
+For example, from $(p\lor q)$ and $\neg p$, the temporary assumption
+$\neg q$ forces $p$ and a conflict. Thus $D$ entails the unit clause $q$.
+
+\begin{definition}
+A clause $C=\ell_1\lor\cdots\lor\ell_k$ has the
+\emph{reverse-unit-propagation} (RUP) property with respect to $D$ if unit
+propagation on
+\[
+D\land\neg\ell_1\land\cdots\land\neg\ell_k
+\]
+produces a contradiction. For an empty $C$, there are no temporary
+assumptions: $D$ itself must yield a unit-propagation contradiction.
+\end{definition}
+
+\begin{lemma}[Soundness of RUP checking]\label{lem:rup}
+If $C$ is RUP with respect to $D$, then $D\models C$. Starting from a
+formula $F$, a sequence of checked RUP additions that reaches the empty
+clause proves $F$ unsatisfiable, provided every clause used in a check is
+an original clause or a previously verified consequence of $F$.
+Deleting previously verified clauses or retaining them preserves this
+soundness statement.
+\end{lemma}
+\begin{proof}
+Any satisfying assignment of $D\land\neg C$ would have to obey every
+forced unit. It cannot obey conflicting units or satisfy an empty clause.
+Hence $D\land\neg C$ is unsatisfiable, so $D\models C$.
+Inductively, every retained clause is a consequence of $F$. A newly
+accepted clause follows from retained consequences of $F$ and is
+therefore also a consequence of $F$. Deleting some of those consequences,
+or continuing to retain them, does not introduce an unjustified premise.
+A checked empty clause gives $F\models\bot$.
+\end{proof}
+
+The saved files use the DRUP text format, with addition and deletion
+records; see~\cite{drat} for the wider clausal-proof setting. Here every
+addition must pass RUP: no general RAT rule is used. The full replay
+reported below uses \texttt{FreshRup}, a C\# implementation that strictly
+parses deletion records but ignores their deletion effect. The logical
+database retains the original clauses and previously accepted
+consequences; the implementation may represent forced units by permanent
+root assignments. Retaining learned consequences costs memory but makes
+the premise invariant especially simple. It is a custom checker, not a
+run of DRAT-trim.
+
+\subsection{The finite assertion}
+\begin{proposition}[Finite exclusion by computation]\label{prop:finite}
+For every $17\leq n\leq25$ and $a\in\calR_n$, the adopted evidence
+contains either a checked RUP refutation of $F_a$, or checked RUP
+refutations of all 51 formulas $F_{a,t}$, $t\in\calT$. The associated
+coverage and input-preservation checks of
+Proposition~\ref{prop:input} pass for these actual inputs.
+\end{proposition}
+\begin{proof}[Computational verification]
+The count representatives and diagonal patterns are reconstructed from
+their definitions and compared with the saved catalogues. The actual
+clauses are checked against Section~\ref{sec:encoding}; valid input
+assignments are extended and evaluated on every clause of each actual
+counter type. The terminal list is then derived from the parent catalogue:
+a direct parent contributes one leaf, and a refined parent contributes
+exactly one child for each of the 51 patterns.
+
+For every leaf, the audited CNF is identified by its path and SHA-256,
+paired with the adopted proof, and passed directly to \texttt{FreshRup}.
+Every addition, including the final empty clause, is checked from that
+input. The full run on October 27, 2026 completed successfully for exactly
+the selected leaf set. Table~\ref{tab:counts} gives its per-weight totals;
+Section~\ref{sec:full-audit} describes the checks binding these totals to
+the actual files. The sources, complete certificates and raw outputs are
+identified in Appendices~\ref{app:reproduction} and~\ref{app:audit}.
+\end{proof}
+
+\begin{table}[htbp]
+\centering\small
+\caption{Complete classification and the October 27 full replay.
+$N_n=|\calA_n|$, $R_n=|\calR_n|$, $B_n$ counts refined parents, and
+$L_n$ counts terminal proofs. Each addition total includes the final
+empty clause of each proof.}\label{tab:counts}\label{tab:fresh-audit}
+\input{generated/audit-table}
+\end{table}
+
+Refinement replaces a parent by its 51 children, so
+\begin{equation}\label{eq:leaf-count}
+L_n=(R_n-B_n)+51B_n=R_n+50B_n.
+\end{equation}
+Consequently, the 1413 parents consist of 1269 direct parents and 144
+refined parents. There are $144\cdot51=7344$ child inputs and
+$1269+7344=8613$ terminal proofs. The input audit checks all
+$1413+7344=8757$ inputs, including the 144 nonterminal parents needed to
+validate the refinements. Those parents are not counted again as leaves.
+
+\subsection{How the complete run is tied to the mathematical claim}\label{sec:full-audit}
+The October 27 input auditor was a new Python standard-library
+implementation. It imports neither the original encoder nor an earlier
+auditor. It independently reconstructs the 400 base variables and 1595
+base clauses, the count representatives, and the 51 patterns. For every
+parent and child it performs the actual-clause checks described in
+Section~\ref{sec:encoding}. Across all weights there are 14 actual
+counter-component types, with targets $r=0,\ldots,13$. The complete
+normalized clause list is part of a type's identity. All
+\[
+\sum_{r=0}^{13}\binom{16}{r}=65,399
+\]
+valid component inputs pass the extension check and direct clause
+evaluation. This is exhaustive over the actual types, not random
+sampling and not a claim about every encoding the library can generate.
+
+The connection from the catalogue to the run is checked in the following
+order; a failure in any step prevents a full-success report.
+\begin{enumerate}
+\item Reconstruct every parent representative. Require exactly one
+adopted direct leaf or all 51 specified children for that parent.
+\item Require unique leaf identifiers, CNF paths and proof paths. Match
+every terminal CNF's hash to the input auditor's record, and check the
+paired proof's size and hash against the selection ledger.
+\item Run the same frozen checker on every selected pair. Require each
+addition to pass and each proof to end in a checked empty clause.
+\item Parse every final output row strictly. Match its identity, batch
+position, addition count and empty-clause flag to the selected input.
+Require all batch exits to succeed and the returned identity set to equal
+the expected set.
+\end{enumerate}
+These checks are stronger than counting 8613 output rows: a duplicate
+could otherwise hide a missing leaf. Hashes establish which bytes were
+checked; the input and RUP checks establish their mathematical role.
+
+All 8613 proofs passed, with 66,403,934 additions including 8613 final
+empty clauses. The checker also parsed and ignored 42,830,405 deletion
+records. All 17,226 terminal CNF/proof files, totaling 6,585,642,510 bytes,
+matched their recorded sizes and hashes. The run used eight batches,
+started at 00:58:43 and ended at 01:16:33 on October 27, 2026
+(UTC+08:00), with a wall time of 1070.69 seconds. The sum of individual
+leaf times was 6153.77 seconds; parallel wall time and summed task time
+are different quantities. No old success cache or newly rerun SAT search
+was used, and the checker source and executable were frozen throughout.
+
+The original search used Glucose3 through PySAT. Some parent searches
+ended with \texttt{UNKNOWN} or a conflict-budget limit and were later
+replaced by complete 51-child refutations. Such statuses, interrupted
+runs and unchecked \texttt{UNSAT} outputs do not exclude a branch.
+The October 27 full run uses only \texttt{FreshRup}; active-deletion
+variants and earlier fallback counts belong to the supplementary or
+historical records in Appendix~\ref{app:audit}.

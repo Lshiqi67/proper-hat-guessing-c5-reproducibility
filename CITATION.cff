@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "Please cite the exact manuscript and evidence version. This is a private prepublication candidate; use the real arXiv identifier once assigned."
+type: dataset
+title: "Proper Hat-Guessing Number of C5: Curated Reproduction Deposit"
+authors:
+  - family-names: Liu
+    given-names: Shiqi
+    affiliation: Dalian University of Technology
+version: "c5-arxiv-v1-evidence-20261027"
+url: "https://github.com/Lshiqi67/proper-hat-guessing-c5-reproducibility/releases/tag/c5-arxiv-v1-evidence-20261027"
+abstract: "Curated code, audit ledgers and complete computational evidence for a computer-assisted argument that HG_P(C5)=4. The full local audit checked all actual inputs and replayed 8,613 terminal certificates and 66,403,934 RUP additions. The deposit is prepared privately; no arXiv announcement, external human peer review or proof-assistant certification is claimed."
+preferred-citation:
+  type: unpublished
+  title: "The Proper Hat-Guessing Number of the Five-Cycle: A Computer-Assisted Argument"
+  authors:
+    - family-names: Liu
+      given-names: Shiqi
+      affiliation: Dalian University of Technology
+  year: 2026
+  version: "20261027-arxiv-preparation"
+  url: "https://github.com/Lshiqi67/proper-hat-guessing-c5-reproducibility/blob/c5-arxiv-v1-evidence-20261027/paper/c5-proper-hat-guessing-arxiv.pdf"

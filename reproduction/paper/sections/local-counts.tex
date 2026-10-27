@@ -1,0 +1,254 @@
+\section{A combinatorial lower bound for a fixed color}\label{sec:local}
+Fix $z\in Q$ and put $S=Q\setminus\{z\}$. By
+Lemma~\ref{lem:normalization}, we may work with a normalized strategy
+without changing the matrices $M_i^z$. Throughout this section it is enough
+to require winning only on the configurations in which $z$ occurs twice.
+The argument proceeds from one fixed nonadjacent pair of $z$-vertices
+to all five such pairs. We first obtain a pairwise inequality, then
+analyze equality, and finally show that total weights 15 and 16 would
+force incompatible equality cases.
+
+\subsection{A missed-pair graph}
+Fix two nonadjacent vertices $i,i+2$ and write a configuration in cyclic
+order starting at $i$ as
+\begin{equation}\label{eq:two-z}
+(z,u,z,v,w),\qquad u,v,w\in S,\quad v\ne w.
+\end{equation}
+Set
+\[
+t=f_{i+1}(z,z),\qquad
+\alpha(w)=f_{i+3}(z,w),\qquad
+\beta(v)=f_{i+4}(v,z).
+\]
+Normalization gives $t\in S$, $\alpha(w)\in S\setminus\{w\}$, and
+$\beta(v)\in S\setminus\{v\}$. Define
+\begin{equation}\label{eq:missed}
+E=\{(v,w)\in S^2:v\ne w,\ \alpha(w)\ne v,\ \beta(v)\ne w\}.
+\end{equation}
+The variables $u,v,w$ describe actual hat colors, whereas $t,\alpha,\beta$
+are answers supplied by the strategy. The five observations give:
+\begin{center}\small
+\begin{tabular}{@{}cccl@{}}
+\toprule
+Player&Hat&Observation&Condition for a correct guess\\
+\midrule
+$i$&$z$&$(w,u)$&$M_i^z(w,u)=1$\\
+$i+1$&$u$&$(z,z)$&$u=t$\\
+$i+2$&$z$&$(u,v)$&$M_{i+2}^z(u,v)=1$\\
+$i+3$&$v$&$(z,w)$&$\alpha(w)=v$\\
+$i+4$&$w$&$(v,z)$&$\beta(v)=w$\\
+\bottomrule
+\end{tabular}
+\end{center}
+View $E$ as a bipartite graph whose row vertices are labeled by $v$ and whose
+column vertices are labeled by $w$. Among the 12 ordered unequal pairs,
+$\alpha$ guesses exactly four and $\beta$ guesses exactly four. Their sets
+may intersect, so
+\begin{equation}\label{eq:missed-size}
+|E|\geq4.
+\end{equation}
+Every vertex of this graph has degree at most~3; in particular, one vertex
+cannot cover all its edges. Notice that $E$ does not depend on~$u$.
+Even when a row and a column have the same color label, they are distinct
+vertices of this bipartite graph. A vertex cover is a set of row and
+column vertices meeting every edge; it is not a set of colors.
+
+For $u\ne t$, the middle player in~\eqref{eq:two-z} is wrong. For
+$(v,w)\in E$, both end players are wrong as well. Thus one of the two
+players wearing $z$ must be correct, which is equivalent to
+\begin{equation}\label{eq:slice-cover}
+M_i^z(w,u)=1\quad\text{or}\quad M_{i+2}^z(u,v)=1.
+\end{equation}
+For a fixed $u$, the selected columns $w$ and selected rows $v$ must
+therefore form a vertex cover of~$E$.
+For this fixed $u$, its size is exactly the number of selected entries
+in column $u$ of $M_i^z$ plus the number in row $u$ of $M_{i+2}^z$.
+The selected entries for different values of $u$ are disjoint. Thus the
+three cover bounds may be added without double counting.
+
+\begin{lemma}[Pair inequality]\label{lem:pair}
+For every $i$,
+\[
+s_i(z)+s_{i+2}(z)\geq6.
+\]
+Consequently, $S(z)\geq15$.
+\end{lemma}
+\begin{proof}
+For each of the three choices $u\in S\setminus\{t\}$, a vertex cover as
+in~\eqref{eq:slice-cover} has at least two vertices by
+\eqref{eq:missed-size}. Hence
+\[
+\sum_{w\in S}M_i^z(w,u)+\sum_{v\in S}M_{i+2}^z(u,v)\geq2.
+\]
+Sum over these three values of $u$ and include the nonnegative contribution
+at $u=t$. This gives the pair inequality. Summing it over the five values
+of $i$ counts every $s_i(z)$ twice and gives $2S(z)\geq30$.
+\end{proof}
+
+\subsection{All vertex covers of size two}
+The equality case of Lemma~\ref{lem:pair} requires more information than
+the number of edges in~$E$.
+
+\begin{lemma}[Two-vertex covers]\label{lem:covers}
+For a graph $E$ defined by~\eqref{eq:missed}, the following hold.
+\begin{enumerate}
+\item A cover consisting of a row $a$ and a column $b$ is possible only
+when $a=b$. If it exists, it is the unique cover of size two, and $E$ is
+the disjoint union of two copies of $K_{1,2}$ centered at that row and column.
+\item There is at most one cover consisting of two rows and at most one
+consisting of two columns.
+\item If both pure covers exist, $E$ consists of all four edges of the
+resulting $2\times2$ rectangle, and its row-label and column-label sets are
+disjoint.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+Suppose that row $a$ and column $b$, with $a\ne b$, cover $E$. The submatrix
+on $S\setminus\{a\}$ and $S\setminus\{b\}$ contains nine pairs. Exactly two
+are diagonal pairs, since $|S\setminus\{a,b\}|=2$, leaving seven permitted
+unequal pairs. None may belong to $E$. However, $\alpha$ can cover at most
+one pair in each of the remaining three columns, and $\beta$ can cover at
+most one in each of the three rows. Together they cover at most six, a
+contradiction.
+
+Now suppose that row $a$ and column $a$ cover $E$, and let
+$T=S\setminus\{a\}$. The six unequal pairs in $T^2$ must all be covered
+by $\alpha$ or $\beta$. Each function covers at most three such pairs.
+Thus both cover exactly three, their covered sets are disjoint, and
+$\alpha(T),\beta(T)\subseteq T$. In column $a$, the three legal rows lie
+in $T$. The function $\beta$ guesses $a$ at none of these rows, while
+$\alpha(a)\in T$ covers exactly one of the three pairs. Exactly two edges
+of $E$ remain in column $a$. In row $a$, the function $\alpha$ never
+answers $a$ in columns of $T$, and $\beta(a)\in T$ covers exactly one
+of its three legal cells. Exactly two edges therefore remain in row $a$
+as well. There are no other edges. The two stars have disjoint
+vertex sets. A cover of a two-edge star that uses only one vertex must use
+its center, so their two centers are the unique cover of size two.
+
+If two distinct pairs of rows each cover $E$, every row incident with an
+edge belongs to the intersection of the two pairs, which has size at most
+one. This would give at most three edges, contradicting~\eqref{eq:missed-size}.
+The same reasoning applies to columns. Finally, if a pair of rows and a
+pair of columns both cover $E$, all edges lie in their $2\times2$ rectangle.
+There are at least four edges, so every cell is an edge. A shared color
+label between the two pairs would put a forbidden diagonal cell in this
+rectangle. The label sets must therefore be disjoint.
+\end{proof}
+
+\subsection{Tight pairs and consecutive equalities}
+The support of a Boolean matrix is called an $r\times s$ full rectangle
+if it is the product of an $r$-element row set and an $s$-element column
+set. In the following statement a rectangle with a zero dimension is empty.
+
+\begin{lemma}[Structure of a tight pair]\label{lem:tight}
+If $s_i(z)+s_{i+2}(z)=6$, then either
+\begin{enumerate}
+\item the supports of $M_i^z,M_{i+2}^z$ are full rectangles of sizes
+$1\times3$ and $3\times1$, respectively; or
+\item for some $k\in\{0,1,2,3\}$ they are full rectangles of sizes
+$2\times k$ and $(3-k)\times2$, respectively.
+\end{enumerate}
+In particular,
+\begin{equation}\label{eq:tight-counts}
+(s_i(z),s_{i+2}(z))\in\{(0,6),(2,4),(3,3),(4,2),(6,0)\}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+In the proof of Lemma~\ref{lem:pair}, the three slices $u\ne t$ must each
+contribute exactly two entries, and the slice $u=t$ must contribute zero.
+Each selected pair is therefore a cover of $E$ of size two.
+There are no additional nonzero entries outside these covers: their
+three contributions already account for the entire weight six.
+
+If a mixed cover exists, Lemma~\ref{lem:covers} makes it unique: row $a$
+and column $a$ for some $a\in S$. Thus $M_i^z(a,u)=1$ for all $u\ne t$,
+and these are its only nonzero entries. Likewise, the only nonzero entries
+of $M_{i+2}^z$ are $M_{i+2}^z(u,a)=1$ for $u\ne t$. This gives (i).
+
+If there is no mixed cover, each slice chooses either the unique pure
+column cover, when available, or the unique pure row cover. Let $U$ be the
+set of slices using the column cover and put $k=|U|$. The nonzero entries
+of $M_i^z$ have row labels equal to the two selected column labels of $E$
+and column labels in $U$. The nonzero entries of $M_{i+2}^z$ have row
+labels in $(S\setminus\{t\})\setminus U$ and column labels equal to the
+two selected row labels of $E$. This proves (ii), including the cases in
+which only one pure cover is available. When $k=0$ or $k=3$, the
+unused cover need not exist; the corresponding matrix is empty, and
+its zero-dimensional rectangle denotes just the empty support.
+Counting entries gives
+\eqref{eq:tight-counts}.
+\end{proof}
+
+\begin{corollary}[A restriction at two tight pairs]\label{cor:two-tight}
+If $s_{i-2}(z)+s_i(z)=s_i(z)+s_{i+2}(z)=6$, then
+$s_i(z)\in\{0,4\}$.
+\end{corollary}
+\begin{proof}
+By~\eqref{eq:tight-counts}, the candidates are $0,2,3,4,6$. In the pair
+$(i-2,i)$ the matrix $M_i^z$ is the right-hand matrix of
+Lemma~\ref{lem:tight}, whereas in the pair $(i,i+2)$ it is the left-hand
+matrix. For weights 2, 3, and 6, its required dimensions in these two roles
+are, respectively,
+\[
+\begin{array}{c|ccc}
+\text{weight}&2&3&6\\\hline
+\text{right-hand role}&1\times2&3\times1&3\times2\\
+\text{left-hand role}&2\times1&1\times3&2\times3
+\end{array}
+\]
+A fixed nonempty matrix cannot have two different numbers of nonzero rows
+or columns. These three weights are excluded, leaving only 0 and~4.
+\end{proof}
+
+\begin{proposition}[The lower bound 17]\label{prop:seventeen}
+Every five-color winning strategy satisfies $S(z)\geq17$ for each $z\in Q$.
+\end{proposition}
+\begin{proof}
+Put $a_j=s_{1+2j}(z)$ for $j\in\mathbb Z/5\mathbb Z$. Thus the player
+order is $(1,3,5,2,4)$, and $a_j+a_{j+1}\geq6$. Lemma~\ref{lem:pair}
+already gives $\sum_j a_j\geq15$.
+
+If $\sum_j a_j=15$, all five pair inequalities are equalities. The equations
+$a_{j+1}=6-a_j$ around an odd cycle force every $a_j=3$, contradicting
+Corollary~\ref{cor:two-tight}.
+
+If $\sum_j a_j=16$, put $e_j=a_j+a_{j+1}-6$. Summing gives
+$\sum_j e_j=2\sum_j a_j-30=2$. Such a nonnegative integer vector has
+either one entry 2 or two entries 1. In the latter case their positions
+on a five-cycle are adjacent or nonadjacent; rotations and reflections
+identify all choices of each kind. These are exactly three cases.
+Alternating the five pair equations gives
+\[
+2a_0=(6+e_0)-(6+e_1)+(6+e_2)-(6+e_3)+(6+e_4),
+\quad a_{j+1}=6+e_j-a_j.
+\]
+The following table keeps the same index choices in both columns:
+\begin{center}\small
+\begin{tabular}{@{}ccc@{}}
+\toprule
+$(e_0,e_1,e_2,e_3,e_4)$&$(a_0,a_1,a_2,a_3,a_4)$&Forbidden center\\
+\midrule
+$(2,0,0,0,0)$&$(4,4,2,4,2)$&$a_2=2$\\
+$(1,1,0,0,0)$&$(3,4,3,3,3)$&$a_3=3$\\
+$(1,0,1,0,0)$&$(4,3,3,4,2)$&$a_4=2$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Each indicated center has both incident pair sums equal to six, but its
+value is neither 0 nor 4. Corollary~\ref{cor:two-tight} excludes all
+three cases. Thus 16 is impossible as well.
+The count-preserving part of Lemma~\ref{lem:normalization} extends the
+conclusion to strategies that were not initially normalized.
+\end{proof}
+
+\subsection{What the local bound does and does not prove}
+The argument above uses only 240 of the 1020 proper colorings. The value
+17 is sharp for that restricted requirement: Appendix~\ref{app:witness}
+gives explicit tables winning on all two-occurrence colorings and having
+$S(5)=17$. That same completion loses on other colorings. Thus a larger
+lower bound for a full winning strategy must use additional information,
+including compatibility with the zero- and one-occurrence families.
+The next sections do this by keeping every proper coloring in the base
+formula while fixing only the five counts. They do not freeze the
+positions or the non-special answers of the local witness.
+

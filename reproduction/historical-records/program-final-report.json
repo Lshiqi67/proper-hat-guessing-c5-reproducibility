@@ -1,0 +1,88 @@
+{
+  "status": "ALL_CORE_PROGRAM_AND_COMPUTATION_CHECKS_PASSED",
+  "finished_at": "2026-10-27T01:18:24.231828+08:00",
+  "command": [
+    "E:\\Python\\python.exe",
+    "review/runs/20261027-program-audit/finalize_audit.py"
+  ],
+  "source_sha256": "864ad0b55229581e837259c1b9cb10ff0e58c448e69b110d94e49e19fe74fa9f",
+  "parent_inputs": 1413,
+  "child_inputs": 7344,
+  "component_types": 14,
+  "valid_auxiliary_inputs": 65399,
+  "terminal_proofs": 8613,
+  "verified_rup_additions": 66403934,
+  "checked_empty_clauses": 8613,
+  "deletion_records_parsed_and_ignored": 42830405,
+  "endpoint_function_pairs": 6561,
+  "tight_support_cases": 1440,
+  "checker_unit_tests": 537,
+  "q4_configurations": 240,
+  "witness_configurations": 1020,
+  "checked_evidence_files": 17226,
+  "checked_evidence_bytes": 6585642510,
+  "replay_wall_seconds": 1070.6879851000012,
+  "by_weight": {
+    "17": {
+      "leaves": 3,
+      "additions": 14413,
+      "deletions": 8906
+    },
+    "18": {
+      "leaves": 12,
+      "additions": 70751,
+      "deletions": 45963
+    },
+    "19": {
+      "leaves": 29,
+      "additions": 284448,
+      "deletions": 194762
+    },
+    "20": {
+      "leaves": 60,
+      "additions": 742441,
+      "deletions": 471020
+    },
+    "21": {
+      "leaves": 102,
+      "additions": 2776244,
+      "deletions": 2165646
+    },
+    "22": {
+      "leaves": 713,
+      "additions": 5704885,
+      "deletions": 3644529
+    },
+    "23": {
+      "leaves": 1640,
+      "additions": 11590970,
+      "deletions": 7292044
+    },
+    "24": {
+      "leaves": 2141,
+      "additions": 16112383,
+      "deletions": 10375452
+    },
+    "25": {
+      "leaves": 3913,
+      "additions": 29107399,
+      "deletions": 18632083
+    }
+  },
+  "checker_source_sha256": "fa991db895021be9f4fc50ca010fb221d05d850f398c38c1c2c3615f8c58dd63",
+  "checker_exe_sha256": "293238b193d08b426e8e951c21965372b4b4ed89a72d218625a8ea5cb7e0ec60",
+  "strict_tsv_rows": true,
+  "all_batches_unchanged": true,
+  "all_main_sources_unchanged": true,
+  "scope": "独立重建全部最终输入，直接评价全部合法辅助扩展；本轮冻结FreshRup从原输入重放每个采用叶的全部RUP添加及空子句。未读取旧成功缓存；未重跑SAT搜索。",
+  "limitations": "同一AI辅助流程的源码审阅、新实现与实际运行，非外部审稿或检查器形式化证明。活动删除变体仅为补充测试/样本，不用于本全量结论。",
+  "report_hashes": {
+    "input-audit/report.json": "e7ded2102c319810917d850c608cb74348bc277543db59545c41aa0e9a87b4b7",
+    "input-audit/cross-link-report.json": "3f79fa4d833f557139338503ce7becf29b9d9e34e9f9737f3bcd8701c563edea",
+    "replay/prepare-report.json": "3d4c97b999ec1782a7452bd7899aaf8d783231fd783ce99268bfb9426e966034",
+    "replay/replay-report.json": "fbb479faa407986df8cbe77b504e29b2b912e76257f7ee6291789e64d25e33ce",
+    "source-provenance.json": "cb1d33874efc951b90e1de0b7aeab20ffa0cff7cad7cbd8f7f756b1c755afdcd",
+    "local-structure-report.json": "5d75d4c8ee822e8af75552ad51341ac64028b2ea247bab3f18260e6cd05889e0",
+    "rup-checker/checker-tests.json": "84848ceb70e953de3db99bac0b98ad88eebf9ef5282babf4d84b288e4356b387"
+  }
+}

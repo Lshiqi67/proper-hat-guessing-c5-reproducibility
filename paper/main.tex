@@ -1,0 +1,72 @@
+\documentclass[11pt,reqno]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,mathtools}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usepackage{booktabs,array,longtable,enumitem,float}
+\usepackage{upquote}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\HG}{\operatorname{HG}_{P}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\ind}{\mathbf{1}}
+\newcommand{\calC}{\mathcal{C}}
+\newcommand{\calA}{\mathcal{A}}
+\newcommand{\calR}{\mathcal{R}}
+\newcommand{\calT}{\mathcal{T}}
+\newcommand{\sat}{\mathrm{SAT}}
+\newcommand{\unsat}{\mathrm{UNSAT}}
+\newcommand{\Stirling}[2]{\genfrac{\{}{\}}{0pt}{}{#1}{#2}}
+\numberwithin{equation}{section}
+\setlist[enumerate]{label=\textup{(\roman*)},leftmargin=*,itemsep=3pt}
+\setlength{\emergencystretch}{2em}
+\raggedbottom
+\title[Proper hat guessing on the five-cycle]{The Proper Hat-Guessing Number of the Five-Cycle:\\A Computer-Assisted Argument}
+\author{Shiqi Liu}
+\address{Dalian University of Technology}
+\date{October 27, 2026 (prepared after local mathematical and computational checks)}
+\thanks{Developed with computer and AI assistance; the scope of the local verification and access to its evidence are stated in Sections~\ref{sec:certificates} and~\ref{sec:conclusion}.}
+\keywords{Proper hat guessing, cycle, finite classification, satisfiability, proof certificates}
+\hypersetup{pdftitle={The Proper Hat-Guessing Number of the Five-Cycle: A Computer-Assisted Argument},pdfauthor={Shiqi Liu},pdfsubject={arXiv submission candidate with versioned computational evidence}}
+\begin{document}
+\begin{abstract}
+We give a computer-assisted proof that the proper hat-guessing number
+of the five-cycle is four. The upper bound concerns arbitrary deterministic
+local rules, with no symmetry assumption. A counting argument selects a
+color guessed on at most 25 strategy-table entries. A classification of
+two-vertex covers in a bipartite graph proves the necessary lower bound
+17. These restrictions, followed by vertex and color relabeling,
+reduce the exclusion to 1413 count representatives and 8613 terminal
+Boolean formulas. We separate three obligations: coverage of every
+hypothetical strategy, preservation of that strategy by the actual
+encoding, and refutation of each terminal formula. The encoding check
+exhausts all 65,399 admissible inputs of the 14 counter-component types;
+the complete local replay checks 66,403,934 reverse-unit-propagation
+additions, including every final empty clause. We give examples of the
+reductions, explain the inference rule, and specify how the versioned
+code, input and proof records fit together. A local witness attaining 17
+shows why the two-occurrence argument alone is insufficient. The
+verification uses separately implemented local programs within one
+AI-assisted workflow; it is not a proof-assistant formalization.
+\end{abstract}
+\maketitle
+\input{sections/introduction}
+\input{sections/preliminaries}
+\input{sections/local-counts}
+\input{sections/classification}
+\input{sections/encoding}
+\input{sections/certificates}
+\input{sections/conclusion}
+\appendix
+\input{sections/local-witness}
+\input{sections/reproducibility}
+\input{sections/audit-record}
+\input{references}
+\end{document}

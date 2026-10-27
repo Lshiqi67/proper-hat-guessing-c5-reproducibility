@@ -1,0 +1,16 @@
+{
+  "title": "The Proper Hat-Guessing Number of the Five-Cycle: A Computer-Assisted Argument",
+  "authors": "Shiqi Liu",
+  "affiliation": "Dalian University of Technology",
+  "category": "math.CO",
+  "abstract": "We give a computer-assisted proof that the proper hat-guessing number of the five-cycle is four. The upper bound concerns arbitrary deterministic local rules, with no symmetry assumption. A counting argument selects a color guessed on at most 25 strategy-table entries. A classification of two-vertex covers in a bipartite graph proves the necessary lower bound 17. These restrictions, followed by vertex and color relabeling, reduce the exclusion to 1413 count representatives and 8613 terminal Boolean formulas. We separate three obligations: coverage of every hypothetical strategy, preservation of that strategy by the actual encoding, and refutation of each terminal formula. The encoding check exhausts all 65,399 admissible inputs of the 14 counter-component types; the complete local replay checks 66,403,934 reverse-unit-propagation additions, including every final empty clause. We give examples of the reductions, explain the inference rule, and specify how the versioned code, input and proof records fit together. A local witness attaining 17 shows why the two-occurrence argument alone is insufficient. The verification uses separately implemented local programs within one AI-assisted workflow; it is not a proof-assistant formalization.",
+  "comments": "23 pages, 1 figure. Computer-assisted proof; versioned code and complete certificates are scheduled for public release with the arXiv announcement.",
+  "journal_reference": "",
+  "doi": "",
+  "license_name": "arXiv perpetual, non-exclusive license to distribute",
+  "license_url": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "status": "PRIVATE_PREPUBLICATION_CANDIDATE_NOT_SUBMITTED",
+  "evidence_release_url": "https://github.com/Lshiqi67/proper-hat-guessing-c5-reproducibility/releases/tag/c5-arxiv-v1-evidence-20261027",
+  "public_access": "Planned when this preprint is announced on arXiv; private before announcement.",
+  "author_final_review": "Pending; no completed human review is asserted."
+}

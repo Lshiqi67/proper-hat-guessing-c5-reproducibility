@@ -1,0 +1,176 @@
+\section{Audit provenance and the revision's evidence map}\label{app:audit}
+The two reviews consolidated on October 27, 2026 address the 22-page
+audited manuscript dated October 26, version
+\begin{quote}\small\raggedright
+\path{20261026-audit-integrated}.
+\end{quote}
+The first examined the
+mathematical implications while accepting the reported finite results as
+premises. The second reviewed the code and actually rechecked all adopted
+inputs and proofs. This manuscript revises that latest audited text using
+the same mathematical problem and the same adopted evidence. Its
+preparation is separate from the full computation and the packaging tests
+recorded below.
+
+\subsection{Locate the evidence for a statement}
+The separate review ZIP extracts to the directory
+\begin{quote}\small\raggedright
+\path{20261027-two-stage-review/}.
+\end{quote}
+Its \path{report.md} is the detailed
+Chinese synthesis; \path{data/README.md} defines the machine-readable
+fields. The package freezes 2527 original source and context files,
+37,282,869 bytes, in \path{snapshot/research/}, retaining the original
+research-relative paths. Newly derived data and packaging-test records
+are additional files, not part of that snapshot count.
+
+\begingroup\small
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{6.0cm}>{\raggedright\arraybackslash}p{8.1cm}@{}}
+\toprule
+Review-package path&Use in checking this paper\\
+\midrule
+\endfirsthead
+\toprule
+Review-package path&Use in checking this paper (continued)\\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+\path{data/summary.json}&Two review scopes, source fingerprints and
+full-run totals for Section~\ref{sec:full-audit}.\\[3pt]
+\path{data/weight-summary.json}&All rows of Table~\ref{tab:counts}.\\[3pt]
+\path{data/leaf-audit.jsonl}&One row per adopted leaf: identity,
+count vector, CNF/proof hashes, batch position, additions and empty-clause
+result.\\[3pt]
+\path{data/input-audit.jsonl}&8757 actual input checks;
+144 nonterminal parents are distinguished from the 8613 terminal inputs.\\[3pt]
+\path{data/evidence-files.jsonl}&Paths, sizes and SHA-256 values of
+all 17,226 terminal files.\\[3pt]
+\path{data/component-types.json}&Actual counter types and exhaustive
+valid-input coverage for~\eqref{eq:extension}.\\[3pt]
+\path{data/test-summary.json}&Separate implementation tests, seeds,
+supplementary variants and incomplete preliminary runs.\\[3pt]
+\path{snapshot-manifest.json}&Original-to-snapshot byte identities.\\[3pt]
+\path{package-manifest.json}&Inventory and hashes of the compact
+review package; large certificates are supplied separately.\\
+\end{longtable}
+\endgroup
+
+For the raw second-review outputs, append
+\path{review/runs/20261027-program-audit/} to
+\path{snapshot/research/}. In that directory,
+\path{final-report.json} joins the successful input audit, file checks
+and full replay. The input evidence is in
+\path{input-audit/report.json} and \path{input-audit/input-files.jsonl};
+\path{replay/replay-report.json} and the eight files
+\path{replay/replay-0.tsv} through \path{replay/replay-7.tsv} give the
+actual proof outputs. The finalizer checks every nonempty row, its
+identity and order, all batch exit codes, and the frozen source and
+binary fingerprints. A historical PASS field is not a replacement for
+running those proofs when reproducing them.
+
+The first mathematical review is preserved at
+\begin{quote}\small\raggedright
+\path{snapshot/research/checks/math-logic-review-20261027/README.md}.
+\end{quote}
+Its conclusions about the reductions are conditional on the finite
+premises, as intended; the second review supplies actual computational
+checks of those premises. The hand proofs remain in the paper, rather
+than being replaced by the enumerations used to cross-check them.
+
+\subsection{The implementations and their checked scope}
+The main full replay uses the frozen \path{FreshRup.cs} source whose
+SHA-256 is the concatenation of these two lines:
+\begin{center}\small\ttfamily
+fa991db895021be9f4fc50ca010fb221d05\\
+d850f398c38c1c2c3615f8c58dd63
+\end{center}
+The corresponding full-run executable hash is
+\begin{center}\small\ttfamily
+293238b193d08b426e8e951c21965372b4\\
+b4ed89a72d218625a8ea5cb7e0ec60
+\end{center}
+The input-auditor source hash is
+\begin{center}\small\ttfamily
+af9524fbc6a4507a025db436678f774d15\\
+55af0a35988bc46fbebcc3ab1598df
+\end{center}
+The original reports check these sources at execution start and finish.
+The checker was written before the older checker sources were inspected;
+subsequent source review and reference-algorithm comparisons were separate
+checks. It uses two watched literals, temporary assumptions that are
+rolled back between additions, and permanent root assignments justified
+by the original clauses or already established consequences.
+
+The checker passed 537 specified cases (471 expected acceptances and 66
+expected rejections) plus a batch failure check. Comparisons of five
+old/new checking modes with a simple propagation reference made 177,295
+clause-level checks. Public-program tests made 368 calls: 340 had a
+specified acceptance or rejection result, while 28 recorded parser-policy
+differences. The input auditor was compared with exhaustive auxiliary
+search on 200 small Horn components and checked on eight parser cases.
+These test counts have different units and are not added into a single
+number of independent proofs. Their main random seed was 20261027.
+
+Supplementary \texttt{FreshRupActive} tests use active learned-clause
+deletion and a complete-replay fallback. They include 49,856 additional
+differential checks with seed 20261028 and three real proof samples.
+Neither this variant nor its fallback is used in the October 27 full
+run. Thus the 449 fallbacks reported for the older October 26
+\texttt{RupAudit} run must not be attached to the present replay.
+The detailed test records, including the seed distinction, remain in the
+review package.
+
+Finite checks also evaluated all 6561 pairs of endpoint functions, all
+1440 tight-support cases, all 1024 raw diagonal words, the 24 non-special
+color permutations and ten graph automorphisms. The explicit four-color
+construction was checked on all 240 proper colorings; the local witness
+was checked on all 1020 five-colorings, with losses $(35,55,0)$ in the
+zero-, one- and two-occurrence families. These computations cross-check
+the stated finite objects. They do not prove general correctness of a
+checker implementation.
+
+The audit retains its unsuccessful preliminary attempts. An input-auditor
+draft used the wrong metadata tag and was corrected before a complete
+rerun. A differential-test harness initially bypassed the older parser's
+duplicate-literal normalization and was repaired. A preliminary sample
+run hit a 600-second limit at leaf \texttt{21/065/direct}; the separate
+full run later checked this leaf without that single-leaf limit. None of
+these incomplete attempts is counted as a successful full replay. The
+full details belong in the audit record, not in the main deduction.
+
+\subsection{The separate check of the delivered package}
+The v2 package was tested after extraction into a short, fresh directory.
+Every member of all nine evidence ZIPs was read, checked for size,
+SHA-256 and CRC, and restored. All 17,226 terminal files were matched to
+the October 27 selection; the remaining metadata was matched to the
+original evidence manifest. The restored copy passed the complete input
+audit again. A freshly compiled checker then replayed only
+\texttt{17/000/direct}: all 4899 additions, including its empty clause,
+passed. Four rejection checks covered a repeated/missing leaf identity
+with unchanged row count, an existing output directory, an output inside
+the input tree, and incompatible full/narrow selection options.
+
+These packaging checks ran from 01:43:02 to 01:50:31 on October 27
+(UTC+08:00), taking 449.13 seconds. They are not another full
+66,403,934-addition replay. Their delivery-level records are
+\path{checks/validation/packaging-report.json},
+\path{checks/validation/restore/member-readback.jsonl} and the input
+and sample output directories alongside them. Frozen copies are also
+included under \path{checks/delivery-validation/} in the review ZIP.
+The v2 wrapper preserves the original auditor source and redirects only
+its input root, output directory and timer origin; it changes no
+mathematical function. A newly compiled executable has its own recorded
+hash and need not have the historical executable's bytes.
+
+Finally, the v2 code ZIP deliberately retains the audited 22-page PDF,
+whose SHA-256 is
+\begin{center}\small\ttfamily
+5ae7ed9858c5064ee894f52d9825ac6cbe\\
+d38b533428b1426a03d365ed9c28e6
+\end{center}
+The present reader-oriented revision is supplied separately, rather than
+silently replacing that frozen PDF or changing the existing ZIP hashes.
+The theorem, adopted branches, input files and proof certificates are the
+same. A review of this revision should use its current text together with
+the versioned v2 code and evidence, and identify the revision explicitly.

@@ -1,0 +1,70 @@
+\documentclass[11pt,reqno]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,mathtools}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usepackage{booktabs,array,longtable,enumitem,float}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\HG}{\operatorname{HG}_{P}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\ind}{\mathbf{1}}
+\newcommand{\calC}{\mathcal{C}}
+\newcommand{\calA}{\mathcal{A}}
+\newcommand{\calR}{\mathcal{R}}
+\newcommand{\calT}{\mathcal{T}}
+\newcommand{\sat}{\mathrm{SAT}}
+\newcommand{\unsat}{\mathrm{UNSAT}}
+\newcommand{\Stirling}[2]{\genfrac{\{}{\}}{0pt}{}{#1}{#2}}
+\numberwithin{equation}{section}
+\setlist[enumerate]{label=\textup{(\roman*)},leftmargin=*,itemsep=3pt}
+\setlength{\emergencystretch}{2em}
+\title[Proper hat guessing on the five-cycle]{The Proper Hat-Guessing Number of the Five-Cycle:\\A Computer-Assisted Argument}
+\author{shiqi liu}
+\address{Dalian University of Technology}
+\date{October 26, 2026 (revision incorporating the complete local audit)}
+\thanks{Developed with computer and AI assistance. A complete local audit with reimplemented checkers has passed; external review and proof-assistant verification remain outstanding.}
+\keywords{Proper hat guessing, cycle, finite classification, satisfiability, proof certificates}
+\hypersetup{pdftitle={The Proper Hat-Guessing Number of the Five-Cycle: A Computer-Assisted Argument},pdfauthor={shiqi liu},pdfsubject={Complete local replay incorporated; external and formal verification outstanding}}
+\begin{document}
+\begin{abstract}
+We present a computer-assisted argument that the proper hat-guessing
+number of the five-cycle is four. The main task is to exclude five arbitrary
+local guessing functions that win on every proper five-coloring.
+Counting strategy-table entries selects a color guessed between 17 and
+25 times: the upper bound follows by averaging, and the lower bound follows
+from a classification of two-vertex covers of a missed-pair graph.
+Vertex and color relabeling then reduce the problem to 1413 count
+representatives, with selected representatives refined into 51 diagonal
+answer patterns. A complete local audit with a newly implemented checker
+replays all 8613 terminal RUP refutations, including 66,403,934 additions
+and every final empty clause. A new input auditor checks all 1413 parent
+formulas, all 7344 refined inputs, and all 65,399 valid counter inputs. We explain both
+the coverage of all candidate strategies and the extension of each
+candidate to its actual Boolean input; these are separate requirements
+from checking a refutation. An explicit local witness explains why the
+two-occurrence argument alone cannot give the full result. A concordance
+links the proof to the organized research and reproducibility records.
+This reimplementation audit remains part of the same AI-assisted workflow;
+external mathematical review and formal verification of the checking
+software remain outstanding.
+\end{abstract}
+\maketitle
+\input{sections/introduction}
+\input{sections/preliminaries}
+\input{sections/local-counts}
+\input{sections/classification}
+\input{sections/encoding}
+\input{sections/certificates}
+\input{sections/conclusion}
+\appendix
+\input{sections/local-witness}
+\input{sections/reproducibility}
+\input{sections/audit-record}
+\input{references}
+\end{document}

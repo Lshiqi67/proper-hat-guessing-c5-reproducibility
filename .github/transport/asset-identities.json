@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "source_repository": "Lshiqi67/proper-hat-guessing-number-of-c5",
+  "source_release_id": 425024563,
+  "source_tag": "c5-reviewed-2026-10-27",
+  "target_repository": "Lshiqi67/proper-hat-guessing-c5-reproducibility",
+  "target_tag": "c5-arxiv-v1-evidence-20261027",
+  "assets": [
+    {
+      "name": "c5-evidence-20261026-v1-weight17.zip",
+      "source_asset_id": 680491560,
+      "bytes": 322129,
+      "sha256": "ddf1b789a3696731ee98739483146309aeff9e0ff45325182823aa96938dfe90"
+    },
+    {
+      "name": "c5-evidence-20261026-v1-weight18.zip",
+      "source_asset_id": 680491555,
+      "bytes": 1753728,
+      "sha256": "d39c83d6bf88bba424e3771bcf953e6ab6ff10fae45bd866ed851a9a7464379f"
+    },
+    {
+      "name": "c5-evidence-20261026-v1-weight19.zip",
+      "source_asset_id": 680491532,
+      "bytes": 7734230,
+      "sha256": "2ce7ea386a460c6ed8d878d67e7820aaf347c954de19ced7d91523a015cda894"
+    },
+    {
+      "name": "c5-evidence-20261026-v1-weight20.zip",
+      "source_asset_id": 680470606,
+      "bytes": 22015175,
+      "sha256": "dc2fc24a559712a103726c5ea0fa8ff3218784c514b19be1fb072efbcc2b9b10"
+    },
+    {
+      "name": "c5-evidence-20261026-v1-weight21.zip",
+      "source_asset_id": 680459544,
+      "bytes": 111440490,
+      "sha256": "cf25ab2cc139d3a291a86aa12646a45b137c53b54baa1455cd8955f7d7dc5281"
+    },
+    {
+      "name": "c5-evidence-20261026-v1-weight22.zip",
+      "source_asset_id": 680435691,
+      "bytes": 157445377,
+      "sha256": "63a3dbdf7c8650330f8d644356d3eb140ee36c518b1c6df7e6b66668b81bcbc7"
+    },
+    {
+      "name": "c5-evidence-20261026-v1-weight23.zip",
+      "source_asset_id": 680459114,
+      "bytes": 312954465,
+      "sha256": "e19e5ec4bf6452f97c03bfe7e80eff61d58b355c44e31ac4f4c2909cb28259bd"
+    },
+    {
+      "name": "c5-evidence-20261026-v1-weight24.zip",
+      "source_asset_id": 680508078,
+      "bytes": 453799972,
+      "sha256": "372c0a975259828927c09c1bf34a639149440ee2d0f676e72fcb8d56eee46c85"
+    },
+    {
+      "name": "c5-evidence-20261026-v1-weight25.zip",
+      "source_asset_id": 680508534,
+      "bytes": 824199267,
+      "sha256": "fbe4987abc62a79793196c0a816e72e0cfcf9b23321f63fb1c72af8d6d9ae836"
+    },
+    {
+      "name": "c5-reviewed-evidence-20261027-v2-code.zip",
+      "source_asset_id": 680480855,
+      "bytes": 3276866,
+      "sha256": "830ac5e4f806cff722a02ac0e72da6d7ebd0e6543739059f1c1dcfba447c2d4a"
+    },
+    {
+      "name": "p001-two-stage-review-20261027.zip",
+      "source_asset_id": 680473849,
+      "bytes": 15611977,
+      "sha256": "1d2d0151f7106d114ed602bd801f82e11a3e65b1d5f820facde3276dd042c6d4"
+    }
+  ]
+}

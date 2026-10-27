@@ -1,0 +1,21 @@
+Copyright (c) 2026 Shiqi Liu (shiqi liu).
+All rights reserved to the extent granted by applicable law.
+
+No general public or open-source license is granted by this private deposit.
+Persons expressly given access by the repository owner may download and make
+local working copies solely to read, review, and reproduce the research and its
+computational checks, retaining attribution and this notice. Permission to
+redistribute the deposited text, code, or data, publish modified versions, or
+use protected expression for other purposes must be obtained separately from
+the relevant rights holder, unless permitted by applicable law.
+
+This notice claims no exclusive copyright over mathematical ideas, facts,
+methods, public-domain material, third-party works, or material for which
+applicable law does not recognize copyright. AI assistance is disclosed in
+AUTHORSHIP.md and the manuscript. This notice does not determine whether any
+particular AI-assisted contribution is copyrightable or establish ownership
+of a third party's rights. Third-party works retain their own terms.
+
+THE MATERIALS ARE PRELIMINARY AND PROVIDED WITHOUT WARRANTY. THE CORRECTNESS
+OF THE MATHEMATICS, PROGRAMS, CERTIFICATES, AND OVERALL CONCLUSION STILL
+AWAITS INDEPENDENT VERIFICATION.

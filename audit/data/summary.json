@@ -1,0 +1,260 @@
+{
+  "status": "CONSOLIDATED_PRIOR_TWO_STAGE_AUDITS_AND_CROSS_LINKS_VERIFIED",
+  "organized_at": "2026-10-27T01:33:09.100369+08:00",
+  "organization_operation": "仅重算既有审查报告/台账并检查连接，不重新求解、重放RUP或重新散列6.59GB证据",
+  "reviewed_paper_original_path": "paper/versions/20261026-audit-integrated/output/pdf/c5-proper-hat-guessing-audited.pdf",
+  "stage_one": {
+    "date": "2026-10-27",
+    "scope": "数学逻辑审阅；计算结果作为前提",
+    "new_computation_performed": false,
+    "original_report": "checks/math-logic-review-20261027/README.md",
+    "snapshot_report": "snapshot/research/checks/math-logic-review-20261027/README.md"
+  },
+  "stage_two": {
+    "status": "ALL_CORE_PROGRAM_AND_COMPUTATION_CHECKS_PASSED",
+    "started_replay_at": "2026-10-27T00:58:43.187459+08:00",
+    "finished_replay_at": "2026-10-27T01:16:33.657790+08:00",
+    "finalized_at": "2026-10-27T01:18:24.231828+08:00",
+    "scope": "独立重建全部最终输入，直接评价全部合法辅助扩展；本轮冻结FreshRup从原输入重放每个采用叶的全部RUP添加及空子句。未读取旧成功缓存；未重跑SAT搜索。",
+    "original_report": "review/runs/20261027-program-audit/README.md",
+    "snapshot_report": "snapshot/research/review/runs/20261027-program-audit/README.md",
+    "replay_wall_seconds": 1070.6879851000012,
+    "input_audit_seconds": 139.4717653000007,
+    "base_variables": 400,
+    "base_clauses": 1595,
+    "component_types": 14,
+    "valid_auxiliary_inputs": 65399,
+    "checker": "FreshRup",
+    "checker_source_sha256": "fa991db895021be9f4fc50ca010fb221d05d850f398c38c1c2c3615f8c58dd63",
+    "checker_exe_sha256": "293238b193d08b426e8e951c21965372b4b4ed89a72d218625a8ea5cb7e0ec60",
+    "all_active_variant_results_supplementary": true
+  },
+  "totals": {
+    "parents": 1413,
+    "refined_parents": 144,
+    "direct_parents": 1269,
+    "child_inputs": 7344,
+    "terminal_proofs": 8613,
+    "rup_additions": 66403934,
+    "deletion_records_parsed_and_ignored": 42830405,
+    "checked_empty_clauses": 8613,
+    "necessary_count_vectors": 13312,
+    "input_files": 8757,
+    "evidence_files": 17226,
+    "evidence_bytes": 6585642510,
+    "leaf_seconds_sum": 6153.768056
+  },
+  "weights": [
+    {
+      "weight": 17,
+      "parents": 3,
+      "refined_parents": 0,
+      "direct_parents": 3,
+      "child_inputs": 0,
+      "terminal_proofs": 3,
+      "rup_additions": 14413,
+      "deletion_records_parsed_and_ignored": 8906,
+      "checked_empty_clauses": 3,
+      "leaf_seconds_sum": 0.326942,
+      "necessary_count_vectors": 20
+    },
+    {
+      "weight": 18,
+      "parents": 12,
+      "refined_parents": 0,
+      "direct_parents": 12,
+      "child_inputs": 0,
+      "terminal_proofs": 12,
+      "rup_additions": 70751,
+      "deletion_records_parsed_and_ignored": 45963,
+      "checked_empty_clauses": 12,
+      "leaf_seconds_sum": 2.09285,
+      "necessary_count_vectors": 90
+    },
+    {
+      "weight": 19,
+      "parents": 29,
+      "refined_parents": 0,
+      "direct_parents": 29,
+      "child_inputs": 0,
+      "terminal_proofs": 29,
+      "rup_additions": 284448,
+      "deletion_records_parsed_and_ignored": 194762,
+      "checked_empty_clauses": 29,
+      "leaf_seconds_sum": 19.957476,
+      "necessary_count_vectors": 250
+    },
+    {
+      "weight": 20,
+      "parents": 60,
+      "refined_parents": 0,
+      "direct_parents": 60,
+      "child_inputs": 0,
+      "terminal_proofs": 60,
+      "rup_additions": 742441,
+      "deletion_records_parsed_and_ignored": 471020,
+      "checked_empty_clauses": 60,
+      "leaf_seconds_sum": 72.753791,
+      "necessary_count_vectors": 526
+    },
+    {
+      "weight": 21,
+      "parents": 102,
+      "refined_parents": 0,
+      "direct_parents": 102,
+      "child_inputs": 0,
+      "terminal_proofs": 102,
+      "rup_additions": 2776244,
+      "deletion_records_parsed_and_ignored": 2165646,
+      "checked_empty_clauses": 102,
+      "leaf_seconds_sum": 1758.777205,
+      "necessary_count_vectors": 940
+    },
+    {
+      "weight": 22,
+      "parents": 163,
+      "refined_parents": 11,
+      "direct_parents": 152,
+      "child_inputs": 561,
+      "terminal_proofs": 713,
+      "rup_additions": 5704885,
+      "deletion_records_parsed_and_ignored": 3644529,
+      "checked_empty_clauses": 713,
+      "leaf_seconds_sum": 369.839526,
+      "necessary_count_vectors": 1515
+    },
+    {
+      "weight": 23,
+      "parents": 240,
+      "refined_parents": 28,
+      "direct_parents": 212,
+      "child_inputs": 1428,
+      "terminal_proofs": 1640,
+      "rup_additions": 11590970,
+      "deletion_records_parsed_and_ignored": 7292044,
+      "checked_empty_clauses": 1640,
+      "leaf_seconds_sum": 665.48267,
+      "necessary_count_vectors": 2275
+    },
+    {
+      "weight": 24,
+      "parents": 341,
+      "refined_parents": 36,
+      "direct_parents": 305,
+      "child_inputs": 1836,
+      "terminal_proofs": 2141,
+      "rup_additions": 16112383,
+      "deletion_records_parsed_and_ignored": 10375452,
+      "checked_empty_clauses": 2141,
+      "leaf_seconds_sum": 1145.565268,
+      "necessary_count_vectors": 3245
+    },
+    {
+      "weight": 25,
+      "parents": 463,
+      "refined_parents": 69,
+      "direct_parents": 394,
+      "child_inputs": 3519,
+      "terminal_proofs": 3913,
+      "rup_additions": 29107399,
+      "deletion_records_parsed_and_ignored": 18632083,
+      "checked_empty_clauses": 3913,
+      "leaf_seconds_sum": 2118.972328,
+      "necessary_count_vectors": 4451
+    }
+  ],
+  "source_provenance": {
+    "status": "ORIGINAL_SOURCE_HASHES_AND_FRESH_INPUT_LINKS_VERIFIED",
+    "command": [
+      "E:\\Python\\python.exe",
+      "review/runs/20261027-program-audit/check_source_provenance.py"
+    ],
+    "python": "3.13.0 (tags/v3.13.0:60403a5, Oct  7 2024, 09:38:07) [MSC v.1941 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "source_sha256": "5d81ef5450a2659d80041efcd0c89bfee2b44bda0ff957497218568a055df16f",
+    "original_source_files": [
+      {
+        "path": "attempts\\A001-v4-extension\\checks\\solve_count_profiles.py",
+        "sha256": "1c5e0d2beeb3b1e31c1afc40919e23de951411d9d3786012120ac05a01263370"
+      },
+      {
+        "path": "attempts\\A001-v4-extension\\checks\\audit_count_profiles_native.py",
+        "sha256": "95603ce82aaef80cdad93278515907d23daa04dd925d5a7ded2dd90e4662c2b5"
+      },
+      {
+        "path": "attempts\\A001-v4-extension\\checks\\RupCheckNative.cs",
+        "sha256": "81c30196902bd5e2183faffeaec09bfb82490d92ac42ab3e9973b130e5ce9fc8"
+      },
+      {
+        "path": "attempts\\A001-v4-extension\\checks\\RupCheckNative.exe",
+        "sha256": "a27bdede0cd55d9848135feae85aadcbb7c0fa7f3c401f4a1ba2bdf2415a7c73"
+      },
+      {
+        "path": "attempts\\A001-v4-extension\\checks\\audit_native_rup.py",
+        "sha256": "b029df620e886b524ae74554379d2acccf5355a34d1b146c5068dd48381fbe2a"
+      },
+      {
+        "path": "attempts\\A001-v4-extension\\checks\\split_diagonal_profiles.py",
+        "sha256": "f4deb02f7370ecac75714a80fd223403d85fdf0832621ba18b309035e5ec1057"
+      },
+      {
+        "path": "attempts\\A001-v4-extension\\checks\\audit_count_profiles_adaptive.py",
+        "sha256": "2a76f97e03c2e4d0f7f34ecc4ed1cd1ee4ab3a211128bf04342d20c40493e5d8"
+      },
+      {
+        "path": "attempts\\A001-v4-extension\\checks\\profile_certificate_audit.py",
+        "sha256": "a3951385a3330ed50f5afdc3745293816d088e03cbb620d98005b95075a9a86c"
+      },
+      {
+        "path": "attempts\\A001-v4-extension\\checks\\audit_diagonal_partition.py",
+        "sha256": "893d0fd781133743e19da132397ad490eaf3f292bbda295f757f906470bffdc2"
+      },
+      {
+        "path": "attempts\\A001-v4-extension\\checks\\RupCheckActive.cs",
+        "sha256": "fd50d18f0b1b467ef6fc3c631a433714bd1cee0762dbdb052f0ce3e2b704ac47"
+      },
+      {
+        "path": "attempts\\A001-v4-extension\\checks\\RupCheckActive.exe",
+        "sha256": "7bc70dc679921889d1dcf7cb8530e24e342b235d602773222cfe0c79b5c8fbb8"
+      }
+    ],
+    "input_audit_files": 8757,
+    "linked_terminals": 8613,
+    "complete_manifest_sha256": "1d41cffdaf48dbba3be5a0b9f064503bdb64946b5bf6062b1052af22b2f4da6e",
+    "input_ledger_sha256": "ffc32d6f1b945ecb6f9d7fb3becff5ec045c8caf618f37c99ef831e14475f491",
+    "selection_sha256": "a6988cf6984b3e7ce1c215787919141570f19c6412658b1c1588fdd73a2665ab",
+    "scope": "原清单固定的11个源码/二进制文件指纹，以及本轮独立输入语义审计到全部8613重放叶的精确CNF指纹连接。非RUP验证。"
+  },
+  "package_scope": {
+    "compact_package_contains_original_cnf_drup": false,
+    "large_evidence_files_kept_at_original_paths": true,
+    "evidence_files": 17226,
+    "evidence_bytes": 6585642510,
+    "full_evidence_candidate_related_path": "release-candidates/20261027-reviewed-evidence-v2",
+    "full_evidence_candidate_validated_by_this_script": false
+  },
+  "publication": {
+    "published": false,
+    "public_url": null,
+    "doi": null
+  },
+  "limitations": "同一AI辅助流程的源码审阅、新实现与实际运行，非外部审稿或检查器形式化证明。活动删除变体仅为补充测试/样本，不用于本全量结论。",
+  "organization_checks": {
+    "raw_tsv_rows": 8613,
+    "unique_terminal_ids": true,
+    "input_hashes_linked": 8613,
+    "evidence_hash_records_linked": 17226,
+    "eight_batch_sequences_match": true,
+    "all_batch_exit_codes_zero": true,
+    "all_per_weight_totals_match": true,
+    "all_sources_unchanged_during_consolidation": true,
+    "elapsed_seconds": 10.20413009999902,
+    "python": "3.13.0 (tags/v3.13.0:60403a5, Oct  7 2024, 09:38:07) [MSC v.1941 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "command": [
+      "E:\\Python\\python.exe",
+      "review/audits/20261027-two-stage-review/tools/build_data.py"
+    ],
+    "build_script_sha256": "9d51385d9c951ab5c2153f616bc67f4118f73da4f42e047cb9ad43b4c294726e"
+  }
+}

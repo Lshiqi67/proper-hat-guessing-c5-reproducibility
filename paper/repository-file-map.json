@@ -1,0 +1,125 @@
+{
+  "source_version": "20261027-arxiv-preparation",
+  "files": [
+    {
+      "source": "main.tex",
+      "repository_path": "paper/main.tex",
+      "bytes": 3594,
+      "sha256": "76c71a40419fad6bd50742153cac0de88394dcd733c9a7a5a8abf3943419c15b"
+    },
+    {
+      "source": "references.tex",
+      "repository_path": "paper/references.tex",
+      "bytes": 1271,
+      "sha256": "e165930713c716a0e572ef663a8db63e3d0c35a6898154ee556a9bb3de5a90e7"
+    },
+    {
+      "source": "sections/audit-record.tex",
+      "repository_path": "paper/sections/audit-record.tex",
+      "bytes": 9182,
+      "sha256": "cfebf8834b13b60627c06d0da9cb311a60c04a63f7788a3901067a7529be21c9"
+    },
+    {
+      "source": "sections/certificates.tex",
+      "repository_path": "paper/sections/certificates.tex",
+      "bytes": 8493,
+      "sha256": "33a5948d4c344e271be33ae5231310e079de2d5b4280527de58b91ed5be3a78b"
+    },
+    {
+      "source": "sections/classification.tex",
+      "repository_path": "paper/sections/classification.tex",
+      "bytes": 9058,
+      "sha256": "99fcb05df1b4807ff465712adda4009b80c41d388c00a270096244d87bb8be61"
+    },
+    {
+      "source": "sections/conclusion.tex",
+      "repository_path": "paper/sections/conclusion.tex",
+      "bytes": 6635,
+      "sha256": "b191f2612c25571d06ef9392316fc79bbf56ebda67903e88b7cf4d38e37c4cb5"
+    },
+    {
+      "source": "sections/encoding.tex",
+      "repository_path": "paper/sections/encoding.tex",
+      "bytes": 9070,
+      "sha256": "1a57af9237b8a9ad2057c470ab9dfb2a0c0f049226d2a54bd562d75cdce4f30a"
+    },
+    {
+      "source": "sections/introduction.tex",
+      "repository_path": "paper/sections/introduction.tex",
+      "bytes": 7449,
+      "sha256": "6023c7735e39fb0c7e97465b047f56af1549aa7bee2c45a85dc4263bd8217fa1"
+    },
+    {
+      "source": "sections/local-counts.tex",
+      "repository_path": "paper/sections/local-counts.tex",
+      "bytes": 13334,
+      "sha256": "9269ff3ac9dfc83e73d5df3becab24bcc5a9dd443e27d245d69a03e7d7b361bf"
+    },
+    {
+      "source": "sections/local-witness.tex",
+      "repository_path": "paper/sections/local-witness.tex",
+      "bytes": 4264,
+      "sha256": "6e7b6cb7c6adfd840674c9315fab943ccc0b4e34e66211f7a6796d6a6fd30829"
+    },
+    {
+      "source": "sections/preliminaries.tex",
+      "repository_path": "paper/sections/preliminaries.tex",
+      "bytes": 7407,
+      "sha256": "ee032d2e3a534d8cbb7171caca8d4ebfbdcf71cb6ca84517ca3ae6960a4c191d"
+    },
+    {
+      "source": "sections/reproducibility.tex",
+      "repository_path": "paper/sections/reproducibility.tex",
+      "bytes": 8110,
+      "sha256": "31a39dd8081afa3576e0483dd4a6debe7016abadf77d189959f5bfcc81cfe554"
+    },
+    {
+      "source": "generated/audit-table.tex",
+      "repository_path": "paper/generated/audit-table.tex",
+      "bytes": 493,
+      "sha256": "242e880727709ea02e521dba811ce853ba5b859e2d7f5b45a4ecc36538a1b3a1"
+    },
+    {
+      "source": "output/pdf/c5-proper-hat-guessing-arxiv-20261027.pdf",
+      "repository_path": "paper/c5-proper-hat-guessing-arxiv.pdf",
+      "bytes": 509686,
+      "sha256": "170e5f40b5cd0695997760935df38ba8097be07b179c7d4f48ecc597231749e7"
+    },
+    {
+      "source": "output/c5-arxiv-source-20261027.zip",
+      "repository_path": "paper/c5-arxiv-source-20261027.zip",
+      "bytes": 39898,
+      "sha256": "55145693ae29493e9456c5c9cd47a35678ce40e5ad42ede6018773908e023674"
+    },
+    {
+      "source": "metadata.json",
+      "repository_path": "paper/metadata.json",
+      "bytes": 2214,
+      "sha256": "913d686d89c2fa9ad4d447e7a83d8a353628856e345aece589112197e6233c77"
+    },
+    {
+      "source": "abstract.txt",
+      "repository_path": "paper/abstract.txt",
+      "bytes": 1254,
+      "sha256": "9879d9c0c72e0ba578120664a9d72cb001aee8df543936970139f703c5426024"
+    },
+    {
+      "source": "source-manifest.json",
+      "repository_path": "paper/source-manifest.json",
+      "bytes": 2323,
+      "sha256": "a48689f9bcd9a29cb2ed3cb9b0413d53e2497dfe4efd36b28741b217f6396089"
+    },
+    {
+      "source": "BUILDING.md",
+      "repository_path": "paper/BUILDING.md",
+      "bytes": 1314,
+      "sha256": "912a53984d1c54eaf045327fa9101a2e8b80f2f1db8baab444bb1e7059081f4b"
+    },
+    {
+      "source": "revision-notes.md",
+      "repository_path": "paper/revision-notes.md",
+      "bytes": 1424,
+      "sha256": "6b5c28b873ab2c5019b58ec89c0bd972cf52a833163508bde0ff992178d29337"
+    }
+  ]
+}

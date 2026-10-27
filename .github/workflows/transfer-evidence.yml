@@ -1,0 +1,25 @@
+name: Copy frozen private evidence
+on:
+  workflow_dispatch:
+    inputs:
+      transfer_payload:
+        description: Temporary exact-asset transfer payload; never print or persist
+        required: true
+        type: string
+permissions:
+  contents: write
+concurrency:
+  group: c5-private-evidence-transfer
+  cancel-in-progress: false
+jobs:
+  copy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Download exact archives and verify uploaded server digests
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python -B .github/transport/cloud_transfer.py

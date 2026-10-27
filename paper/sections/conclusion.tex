@@ -1,0 +1,126 @@
+\section{From the certificates to the game}\label{sec:conclusion}
+We now combine the three obligations identified in the introduction.
+The next implication is mathematical; its finite premise is exactly the
+input and certificate assertion of Proposition~\ref{prop:finite}.
+
+\begin{theorem}[Certificate-to-game implication]\label{thm:bridge}
+If the finite exclusion and input checks in
+Proposition~\ref{prop:finite} hold, then no five-color winning strategy
+exists on $C_5$.
+\end{theorem}
+\begin{proof}
+Suppose that $f$ is a five-color winning strategy. By
+Proposition~\ref{prop:coverage}, a normalized winning strategy $g$ obtained
+from it has count vector $a\in\calR_n$, with $17\leq n\leq25$, and
+satisfies $g_1(5,5)=1$. There are two cases.
+
+If this parent is a direct terminal branch,
+Proposition~\ref{prop:input} extends the strategy's base assignment to a
+satisfying assignment of its actual formula $F_a$. The checked refutation
+of $F_a$ makes this impossible by Lemma~\ref{lem:rup}.
+
+If the parent is refined, Lemma~\ref{lem:patterns} first applies a
+common permutation of the four non-special colors to $g$, placing
+its diagonal answers in some $t\in\calT$. This permutation preserves the
+parent count vector and the condition that the first diagonal answer is 1.
+Apply the input-preservation result
+\emph{to this transformed strategy}: choose new auxiliary assignments
+for its five counter components. There is no need to transport a previous
+auxiliary assignment through the color permutation or to assume that the
+counter's syntax is color-equivariant. The resulting satisfying assignment
+of $F_{a,t}$ contradicts its checked refutation.
+
+Every parent is either direct or refined, and every refined parent has
+all 51 required subcases. Thus the assumed strategy has been excluded.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+The complete input audit and certificate replay of
+Section~\ref{sec:certificates} verify the finite premise of
+Theorem~\ref{thm:bridge}, excluding five colors. Proposition~\ref{prop:four}
+gives a winning four-color strategy. A winning strategy with more than
+five colors would restrict to one with five by Lemma~\ref{lem:palette}.
+Consequently $\HG(C_5)=4$.
+\end{proof}
+
+\subsection{Why weight 25 is the final obstruction}
+The exclusions below 25 have a useful interpretation before the last
+weight is excluded. This observation is a consequence of those exclusions,
+not an assumption in their Boolean inputs.
+
+\begin{corollary}[The last remaining count]\label{cor:balance}
+Assume the exclusions at weights 17--24 hold. Any five-color winning
+strategy would satisfy
+\[
+S(1)=S(2)=S(3)=S(4)=S(5)=25
+\]
+and would have no entry guessing a neighbor's color. The exclusion at
+weight 25 then contradicts this necessary condition.
+\end{corollary}
+\begin{proof}
+Fix a color $z$ in the original strategy. Use the repair of
+Lemma~\ref{lem:normalization} that preserves the indicators for this
+particular $z$. The bound of Proposition~\ref{prop:seventeen} and the
+exclusions at weights 17--24 imply $S(z)\geq25$: otherwise this repaired
+strategy could be transformed into one of the excluded branches.
+Repeat this argument for each color. The repairs may differ with $z$;
+each inequality concerns the corresponding count in the \emph{same
+original strategy}, because that count was preserved.
+
+Now apply Lemma~\ref{lem:total} to the original strategy:
+$\sum_z S(z)\leq125$. All five lower bounds must be equalities, and every
+table entry must contribute to the sum. An entry guessing a neighbor's
+color contributes zero and is therefore impossible. The weight-25
+exclusion eliminates the remaining possibility.
+\end{proof}
+
+The equality is a total over five players for each fixed color. It does
+not assert that each player guesses each color five times. None of the
+input formulas used this balance conclusion or a lower bound already
+obtained from another weight, so the reasoning has no circular dependence.
+
+\subsection{Computational evidence and access}
+The sealed computational deposit has version
+\begin{quote}\small\raggedright
+\path{c5-reviewed-evidence-20261027-v2}.
+\end{quote}
+It contains selected source code,
+English reproduction instructions, the two-stage review archive and all
+nine complete evidence archives. The precise inventories and commands
+are given in Appendix~\ref{app:reproduction}; source fingerprints and
+actual run records are identified in Appendix~\ref{app:audit}.
+Saved-evidence verification does not require repeating the original SAT
+search. It requires checking branch coverage and input preservation, and
+then replaying all terminal refutations.
+
+The selected files are staged in a private repository. They will be made
+public when this preprint is announced on arXiv, at the fixed release address
+\begin{quote}\small\raggedright
+\url{https://github.com/Lshiqi67/proper-hat-guessing-c5-reproducibility/releases/tag/c5-arxiv-v1-evidence-20261027}.
+\end{quote}
+Until that coordinated release, access is restricted. No archive DOI has
+been assigned. Hashes identify versions and detect byte changes; they do
+not replace access to the files or validation of their mathematical meaning.
+
+The sealed deposit includes the 26 October audited manuscript that was
+examined in the two-stage review. This submission candidate derives from
+the 27 October exposition revision and is supplied separately, with its
+source package and version correspondence. The definitions, branch inputs
+and certificates are unchanged; preparing this candidate neither alters
+the sealed evidence nor constitutes another full replay.
+
+\subsection{Assistance and further mathematical work}
+OpenAI Codex assisted with mathematical exploration, program development,
+local computations, evidence organization and manuscript preparation.
+The solver, input auditor and proof checker serve separate purposes,
+but their development occurred within the same AI-assisted workflow.
+External mathematical scrutiny and a separately reviewed or formally
+verified checker remain useful further checks of the argument.
+
+A mathematical question left by this proof is whether the finite
+exclusion can be replaced by a shorter explanation of the incompatibility
+between the zero-, one- and two-occurrence families. The witness in
+Appendix~\ref{app:witness} shows that the two-occurrence restriction alone
+permits total count 17. A shorter proof must therefore use additional
+compatibility information, rather than simply strengthen that local
+bound for the same restricted family.
