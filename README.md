@@ -1,5 +1,11 @@
 # Proper hat guessing on the five-cycle
 
+**Preparation completed 28 October 2026:** the private Release contains all 17
+verified assets. The current paper has 23 pages. Selected return downloads,
+restoration and a fresh single-leaf replay passed; see the
+[completed checks and exact limits](docs/PREPUBLICATION-VALIDATION.md).
+arXiv website compilation/submission and anonymous access remain pending.
+
 This repository is the curated reproduction deposit for Shiqi Liu's manuscript,
 *The Proper Hat-Guessing Number of the Five-Cycle: A Computer-Assisted Argument*.
 The paper gives a computer-assisted argument for HG_P(C5) = 4 for arbitrary

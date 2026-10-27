@@ -1,0 +1,297 @@
+{
+  "status": "LOCAL_AND_PRIVATE_GITHUB_PREPARATION_COMPLETE_ARXIV_WEBSITE_PENDING",
+  "finished_at": "2026-10-28T00:12:18.742561+08:00",
+  "core_commit": "baa09bd5ab63ed1dd3826a5875d0e0e7585e6a3d",
+  "tag": "c5-arxiv-v1-evidence-20261027",
+  "repository": "Lshiqi67/proper-hat-guessing-c5-reproducibility",
+  "repository_private": true,
+  "release_url": "https://github.com/Lshiqi67/proper-hat-guessing-c5-reproducibility/releases/tag/c5-arxiv-v1-evidence-20261027",
+  "release_id": 425673667,
+  "asset_count": 17,
+  "asset_bytes": 1911268859,
+  "remote_git_blobs_verified": 108,
+  "assets": [
+    {
+      "name": "c5-evidence-20261026-v1-weight17.zip",
+      "bytes": 322129,
+      "sha256": "ddf1b789a3696731ee98739483146309aeff9e0ff45325182823aa96938dfe90",
+      "role": "frozen-evidence",
+      "asset_id": 682084038,
+      "server_digest": "sha256:ddf1b789a3696731ee98739483146309aeff9e0ff45325182823aa96938dfe90",
+      "download_url": "https://github.com/Lshiqi67/proper-hat-guessing-c5-reproducibility/releases/download/untagged-ace6841ed2d16fa804f7/c5-evidence-20261026-v1-weight17.zip"
+    },
+    {
+      "name": "c5-evidence-20261026-v1-weight18.zip",
+      "bytes": 1753728,
+      "sha256": "d39c83d6bf88bba424e3771bcf953e6ab6ff10fae45bd866ed851a9a7464379f",
+      "role": "frozen-evidence",
+      "asset_id": 682084212,
+      "server_digest": "sha256:d39c83d6bf88bba424e3771bcf953e6ab6ff10fae45bd866ed851a9a7464379f",
+      "download_url": "https://github.com/Lshiqi67/proper-hat-guessing-c5-reproducibility/releases/download/untagged-ace6841ed2d16fa804f7/c5-evidence-20261026-v1-weight18.zip"
+    },
+    {
+      "name": "c5-evidence-20261026-v1-weight19.zip",
+      "bytes": 7734230,
+      "sha256": "2ce7ea386a460c6ed8d878d67e7820aaf347c954de19ced7d91523a015cda894",
+      "role": "frozen-evidence",
+      "asset_id": 682084376,
+      "server_digest": "sha256:2ce7ea386a460c6ed8d878d67e7820aaf347c954de19ced7d91523a015cda894",
+      "download_url": "https://github.com/Lshiqi67/proper-hat-guessing-c5-reproducibility/releases/download/untagged-ace6841ed2d16fa804f7/c5-evidence-20261026-v1-weight19.zip"
+    },
+    {
+      "name": "c5-evidence-20261026-v1-weight20.zip",
+      "bytes": 22015175,
+      "sha256": "dc2fc24a559712a103726c5ea0fa8ff3218784c514b19be1fb072efbcc2b9b10",
+      "role": "frozen-evidence",
+      "asset_id": 682084642,
+      "server_digest": "sha256:dc2fc24a559712a103726c5ea0fa8ff3218784c514b19be1fb072efbcc2b9b10",
+      "download_url": "https://github.com/Lshiqi67/proper-hat-guessing-c5-reproducibility/releases/download/untagged-ace6841ed2d16fa804f7/c5-evidence-20261026-v1-weight20.zip"
+    },
+    {
+      "name": "c5-evidence-20261026-v1-weight21.zip",
+      "bytes": 111440490,
+      "sha256": "cf25ab2cc139d3a291a86aa12646a45b137c53b54baa1455cd8955f7d7dc5281",
+      "role": "frozen-evidence",
+      "asset_id": 682084877,
+      "server_digest": "sha256:cf25ab2cc139d3a291a86aa12646a45b137c53b54baa1455cd8955f7d7dc5281",
+      "download_url": "https://github.com/Lshiqi67/proper-hat-guessing-c5-reproducibility/releases/download/untagged-ace6841ed2d16fa804f7/c5-evidence-20261026-v1-weight21.zip"
+    },
+    {
+      "name": "c5-evidence-20261026-v1-weight22.zip",
+      "bytes": 157445377,
+      "sha256": "63a3dbdf7c8650330f8d644356d3eb140ee36c518b1c6df7e6b66668b81bcbc7",
+      "role": "frozen-evidence",
+      "asset_id": 682085237,
+      "server_digest": "sha256:63a3dbdf7c8650330f8d644356d3eb140ee36c518b1c6df7e6b66668b81bcbc7",
+      "download_url": "https://github.com/Lshiqi67/proper-hat-guessing-c5-reproducibility/releases/download/untagged-ace6841ed2d16fa804f7/c5-evidence-20261026-v1-weight22.zip"
+    },
+    {
+      "name": "c5-evidence-20261026-v1-weight23.zip",
+      "bytes": 312954465,
+      "sha256": "e19e5ec4bf6452f97c03bfe7e80eff61d58b355c44e31ac4f4c2909cb28259bd",
+      "role": "frozen-evidence",
+      "asset_id": 682085831,
+      "server_digest": "sha256:e19e5ec4bf6452f97c03bfe7e80eff61d58b355c44e31ac4f4c2909cb28259bd",
+      "download_url": "https://github.com/Lshiqi67/proper-hat-guessing-c5-reproducibility/releases/download/untagged-ace6841ed2d16fa804f7/c5-evidence-20261026-v1-weight23.zip"
+    },
+    {
+      "name": "c5-evidence-20261026-v1-weight24.zip",
+      "bytes": 453799972,
+      "sha256": "372c0a975259828927c09c1bf34a639149440ee2d0f676e72fcb8d56eee46c85",
+      "role": "frozen-evidence",
+      "asset_id": 682086741,
+      "server_digest": "sha256:372c0a975259828927c09c1bf34a639149440ee2d0f676e72fcb8d56eee46c85",
+      "download_url": "https://github.com/Lshiqi67/proper-hat-guessing-c5-reproducibility/releases/download/untagged-ace6841ed2d16fa804f7/c5-evidence-20261026-v1-weight24.zip"
+    },
+    {
+      "name": "c5-evidence-20261026-v1-weight25.zip",
+      "bytes": 824199267,
+      "sha256": "fbe4987abc62a79793196c0a816e72e0cfcf9b23321f63fb1c72af8d6d9ae836",
+      "role": "frozen-evidence",
+      "asset_id": 682088772,
+      "server_digest": "sha256:fbe4987abc62a79793196c0a816e72e0cfcf9b23321f63fb1c72af8d6d9ae836",
+      "download_url": "https://github.com/Lshiqi67/proper-hat-guessing-c5-reproducibility/releases/download/untagged-ace6841ed2d16fa804f7/c5-evidence-20261026-v1-weight25.zip"
+    },
+    {
+      "name": "c5-reviewed-evidence-20261027-v2-code.zip",
+      "bytes": 3276866,
+      "sha256": "830ac5e4f806cff722a02ac0e72da6d7ebd0e6543739059f1c1dcfba447c2d4a",
+      "role": "frozen-evidence",
+      "asset_id": 682090363,
+      "server_digest": "sha256:830ac5e4f806cff722a02ac0e72da6d7ebd0e6543739059f1c1dcfba447c2d4a",
+      "download_url": "https://github.com/Lshiqi67/proper-hat-guessing-c5-reproducibility/releases/download/untagged-ace6841ed2d16fa804f7/c5-reviewed-evidence-20261027-v2-code.zip"
+    },
+    {
+      "name": "p001-two-stage-review-20261027.zip",
+      "bytes": 15611977,
+      "sha256": "1d2d0151f7106d114ed602bd801f82e11a3e65b1d5f820facde3276dd042c6d4",
+      "role": "frozen-evidence",
+      "asset_id": 682090605,
+      "server_digest": "sha256:1d2d0151f7106d114ed602bd801f82e11a3e65b1d5f820facde3276dd042c6d4",
+      "download_url": "https://github.com/Lshiqi67/proper-hat-guessing-c5-reproducibility/releases/download/untagged-ace6841ed2d16fa804f7/p001-two-stage-review-20261027.zip"
+    },
+    {
+      "name": "c5-proper-hat-guessing-arxiv-20261027.pdf",
+      "bytes": 509686,
+      "sha256": "170e5f40b5cd0695997760935df38ba8097be07b179c7d4f48ecc597231749e7",
+      "role": "current-candidate-or-notices",
+      "asset_id": 682089651,
+      "server_digest": "sha256:170e5f40b5cd0695997760935df38ba8097be07b179c7d4f48ecc597231749e7",
+      "download_url": "https://github.com/Lshiqi67/proper-hat-guessing-c5-reproducibility/releases/download/untagged-ace6841ed2d16fa804f7/c5-proper-hat-guessing-arxiv-20261027.pdf"
+    },
+    {
+      "name": "c5-arxiv-source-20261027.zip",
+      "bytes": 39898,
+      "sha256": "55145693ae29493e9456c5c9cd47a35678ce40e5ad42ede6018773908e023674",
+      "role": "current-candidate-or-notices",
+      "asset_id": 682089912,
+      "server_digest": "sha256:55145693ae29493e9456c5c9cd47a35678ce40e5ad42ede6018773908e023674",
+      "download_url": "https://github.com/Lshiqi67/proper-hat-guessing-c5-reproducibility/releases/download/untagged-ace6841ed2d16fa804f7/c5-arxiv-source-20261027.zip"
+    },
+    {
+      "name": "c5-arxiv-manuscript-manifest-20261027.json",
+      "bytes": 3829,
+      "sha256": "a44075f1fee9a3a946424bad9135d87171a0b4ab3132faebee53b2609a259858",
+      "role": "current-candidate-or-notices",
+      "asset_id": 682090103,
+      "server_digest": "sha256:a44075f1fee9a3a946424bad9135d87171a0b4ab3132faebee53b2609a259858",
+      "download_url": "https://github.com/Lshiqi67/proper-hat-guessing-c5-reproducibility/releases/download/untagged-ace6841ed2d16fa804f7/c5-arxiv-manuscript-manifest-20261027.json"
+    },
+    {
+      "name": "c5-publication-notices-20261027.zip",
+      "bytes": 137474,
+      "sha256": "19608d75e6eb6c1bb8e901242e3aeb68d5a380262bda70b59c94db4560a02e96",
+      "role": "current-candidate-or-notices",
+      "asset_id": 682090325,
+      "server_digest": "sha256:19608d75e6eb6c1bb8e901242e3aeb68d5a380262bda70b59c94db4560a02e96",
+      "download_url": "https://github.com/Lshiqi67/proper-hat-guessing-c5-reproducibility/releases/download/untagged-ace6841ed2d16fa804f7/c5-publication-notices-20261027.zip"
+    },
+    {
+      "name": "c5-publication-manifest-20261027.json",
+      "bytes": 22642,
+      "sha256": "d88fc5acd428a6b8bb0e90b185c62026264429017c01f48d943c3bf44907576b",
+      "role": "publication-manifest",
+      "asset_id": 682090532,
+      "server_digest": "sha256:d88fc5acd428a6b8bb0e90b185c62026264429017c01f48d943c3bf44907576b",
+      "download_url": "https://github.com/Lshiqi67/proper-hat-guessing-c5-reproducibility/releases/download/untagged-ace6841ed2d16fa804f7/c5-publication-manifest-20261027.json"
+    },
+    {
+      "name": "c5-publication-SHA256SUMS-20261027.txt",
+      "bytes": 1654,
+      "sha256": "59a64db4b01075af40f58836574a85631e7bc63cb3f8dfad418618699454323b",
+      "role": "checksums",
+      "asset_id": 682090664,
+      "server_digest": "sha256:59a64db4b01075af40f58836574a85631e7bc63cb3f8dfad418618699454323b",
+      "download_url": "https://github.com/Lshiqi67/proper-hat-guessing-c5-reproducibility/releases/download/untagged-ace6841ed2d16fa804f7/c5-publication-SHA256SUMS-20261027.txt"
+    }
+  ],
+  "cloud_copy": {
+    "run_url": "https://github.com/Lshiqi67/proper-hat-guessing-c5-reproducibility/actions/runs/40535924710",
+    "archives": 11,
+    "bytes": 1910553676,
+    "method": "Read and hash original bytes; no recompression"
+  },
+  "manuscript": {
+    "version": "20261027-arxiv-preparation",
+    "pages": 23,
+    "tex_files": 13,
+    "pdf_sha256": "170e5f40b5cd0695997760935df38ba8097be07b179c7d4f48ecc597231749e7",
+    "source_zip_sha256": "55145693ae29493e9456c5c9cd47a35678ce40e5ad42ede6018773908e023674",
+    "local_compiles": 2,
+    "isolated_source_compiles": 2,
+    "final_warnings": 0,
+    "page_texts_identical": true,
+    "protected_content": {
+      "proof_blocks": {
+        "count": 20,
+        "unchanged": true
+      },
+      "display_math": {
+        "count": 25,
+        "unchanged": true
+      },
+      "verbatim_commands": {
+        "count": 3,
+        "unchanged": true
+      },
+      "theorem_blocks": {
+        "count": 21,
+        "unchanged": true
+      }
+    },
+    "byte_identical_math_files": [
+      "generated/audit-table.tex",
+      "sections/audit-record.tex",
+      "sections/certificates.tex",
+      "sections/classification.tex",
+      "sections/encoding.tex",
+      "sections/local-counts.tex",
+      "sections/local-witness.tex",
+      "sections/preliminaries.tex"
+    ]
+  },
+  "licenses": {
+    "author_controlled_code": "MIT",
+    "instructions_and_reports": "CC-BY-4.0",
+    "paper": "arXiv perpetual non-exclusive distribution selection",
+    "third_party_rights_unchanged": true
+  },
+  "offline_download_tests": 15,
+  "transport_guard_tests": 11,
+  "downloaded_and_hashed_assets": [
+    {
+      "name": "c5-evidence-20261026-v1-weight17.zip",
+      "bytes": 322129,
+      "sha256": "ddf1b789a3696731ee98739483146309aeff9e0ff45325182823aa96938dfe90"
+    },
+    {
+      "name": "c5-reviewed-evidence-20261027-v2-code.zip",
+      "bytes": 3276866,
+      "sha256": "830ac5e4f806cff722a02ac0e72da6d7ebd0e6543739059f1c1dcfba447c2d4a"
+    },
+    {
+      "name": "c5-arxiv-source-20261027.zip",
+      "bytes": 39898,
+      "sha256": "55145693ae29493e9456c5c9cd47a35678ce40e5ad42ede6018773908e023674"
+    },
+    {
+      "name": "c5-proper-hat-guessing-arxiv-20261027.pdf",
+      "bytes": 509686,
+      "sha256": "170e5f40b5cd0695997760935df38ba8097be07b179c7d4f48ecc597231749e7"
+    },
+    {
+      "name": "c5-publication-notices-20261027.zip",
+      "bytes": 137474,
+      "sha256": "19608d75e6eb6c1bb8e901242e3aeb68d5a380262bda70b59c94db4560a02e96"
+    }
+  ],
+  "sample_restore": {
+    "weights": [
+      17
+    ],
+    "restored_files": 10,
+    "restored_bytes": 1183936,
+    "archive_sha256_checked": true,
+    "exact_member_inventory_checked": true,
+    "every_member_sha256_and_crc_checked": true,
+    "terminal_hashes_cross_checked_to_20261027_selection": true
+  },
+  "sample_replay": {
+    "scope": "EXPLICIT_PARTIAL_SET",
+    "leaves": 1,
+    "additions": 4899,
+    "checked_empty_clauses": 1,
+    "deletion_records_parsed_and_ignored": 2514,
+    "checker_source_sha256": "fa991db895021be9f4fc50ca010fb221d05d850f398c38c1c2c3615f8c58dd63",
+    "compiled_executable_sha256": "63dc2948a8541f6dc6b732e53dc4dec7477b65a660f4db36ed70031a0702da4c",
+    "exact_unique_identity_coverage_checked": true,
+    "old_success_cache_used": false
+  },
+  "sample_identity": "17/000/direct",
+  "python": "3.12.14",
+  "checker_compiler": "Windows .NET Framework v4.0.30319 csc.exe",
+  "historical_full_audit_repeated": false,
+  "new_SAT_search": false,
+  "anonymous_access_checked": false,
+  "arxiv_source_uploaded": false,
+  "arxiv_server_compilation": false,
+  "arxiv_final_submission": false,
+  "arxiv_website_blocker": "Website steps were not completed in this preparation.",
+  "arxiv_id": null,
+  "doi": null,
+  "author_final_content_review": "Pending",
+  "preservation": {
+    "status": "BASELINE_AND_DIRTY_CHECKOUT_PRESERVED",
+    "checked_at": "2026-10-27T16:05:44.358360+00:00",
+    "source_and_manifest_files_checked": 40,
+    "sealed_archives_checked": 11,
+    "source_scope_note": "Baseline includes authoritative source files and historical isolated build copies; all recorded bytes rechecked."
+  },
+  "prior_failures_retained": [
+    "Draft release tag lookup404; authorized list confirmed existing draft.",
+    "Initial related-document link fixed without changing historical bytes.",
+    "GitHub CLI TLS/timeout failures; small-file asset-ID fallback succeeded.",
+    "First LaTeX warning build retained; final build clean."
+  ],
+  "scope_note": "These are publication preparation and bounded reproduction checks. Historical full mathematics audit, AI assistance and external review limitations remain as documented."
+}
