@@ -1,10 +1,15 @@
 # License scope and historical notices
 
-The author confirmed this selection on 27 October 2026: manuscript arXiv
+Historical selection, confirmed on 27 October 2026: manuscript arXiv
 perpetual non-exclusive distribution license; author-controlled reproducibility
 code MIT; reproduction instructions and audit reports CC BY 4.0. This replaces
-the earlier, unadopted limited-reproduction proposal. It does not publish this
-private repository.
+the earlier, unadopted limited-reproduction proposal.
+
+On 30 October 2026 the repository became public and the author additionally
+published the exact current 23-page PDF under CC BY 4.0 at
+https://doi.org/10.5281/zenodo.23769672. This later grant is limited to that
+published manuscript; older manuscripts and source files are not automatically
+relicensed. Historical inventories and sealed notices remain unchanged.
 
 ## Scope
 
@@ -12,11 +17,12 @@ private repository.
 | --- | --- |
 | Author-controlled Python and C# reproduction, verification, audit and packaging programs; the accompanying workflow; compiled copies of those programs | [MIT](MIT.txt) |
 | Author-controlled READMEs, English reproduction instructions, authorship/version notes, audit reports and explanatory report tables/metadata | [CC BY 4.0](CC-BY-4.0.txt) |
-| Current and historical manuscript text, figures, `.tex`, PDFs and manuscript source ZIPs | [Paper notice](PAPER.md); excluded from MIT/CC BY |
+| Exact 23-page PDF published as Zenodo v1.0 | [CC BY 4.0](CC-BY-4.0.txt); exact identity in [Paper notice](PAPER.md) |
+| Other manuscript versions, `.tex`, source figures and manuscript source ZIPs | [Paper notice](PAPER.md); no automatic extension of the new PDF grant |
 | CNF inputs, DRUP certificates, test inputs and numerical results | Mathematical evidence; see below |
 | Third-party components, notices, quoted material and license texts | Their own terms; no relicensing of third-party rights |
 
-The file-level [scope inventory](../metadata/license-scope.json) identifies the
+The historical 27 October file-level [scope inventory](../metadata/license-scope.json) identifies the
 copied frozen files and every member of the sealed code/audit archives, using
 member paths and SHA-256. The nine complete evidence ZIPs are identified by
 their outer hashes in [the evidence manifest](../metadata/evidence-manifest.json).

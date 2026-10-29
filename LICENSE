@@ -7,16 +7,16 @@ This is a mixed-license research deposit. The author's selected terms are:
 2. Author-controlled reproduction instructions and audit reports:
    Creative Commons Attribution 4.0 International (CC BY 4.0).
    See LICENSES/CC-BY-4.0.txt and https://creativecommons.org/licenses/by/4.0/.
-3. Manuscript text, figures, LaTeX source and manuscript PDFs:
-   the author has selected arXiv's perpetual non-exclusive distribution
-   license for submission. This is a grant to arXiv on submission, not an
-   MIT or CC BY license to readers, and not evidence of acceptance by arXiv.
-   See LICENSES/PAPER.md.
+3. The exact 23-page PDF published as Zenodo version 1.0 on 30 October 2026:
+   CC BY 4.0, to the extent of the author's rights. This additional grant does
+   not automatically relicense older manuscripts, LaTeX sources or source ZIPs.
+   Their separate permissions and the prior arXiv selection are described in
+   LICENSES/PAPER.md.
 
 The operative scope, frozen-archive identities and interaction with historical
 notices are explained in LICENSES/SCOPE.md and metadata/license-scope.json.
 The MIT and CC BY grants apply now to recipients of the applicable material;
-the repository's private visibility is separate from these permissions.
+the repository is public as of 30 October 2026.
 
 The author grants these permissions only to the extent the author is entitled
 to do so. Third-party works and dependencies retain their own terms. No

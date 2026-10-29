@@ -1,5 +1,10 @@
 # Completed private preparation checks
 
+> Historical preparation record (27–28 October 2026). For the current public
+> status, paper DOI and additional PDF license, see
+> [PUBLICATION-20261030.md](PUBLICATION-20261030.md). The original plan to wait
+> for arXiv was superseded by the author's Zenodo publication decision.
+
 Recorded 2026-10-28T00:12:18.742561+08:00. Repository visibility remains **private**. No arXiv
 submission, server build, announcement or anonymous access is claimed.
 

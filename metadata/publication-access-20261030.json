@@ -1,0 +1,33 @@
+{
+  "checked_at_utc": "2026-10-29T16:25:54.653242+00:00",
+  "command": "python check_public_access.py",
+  "environment": "Python standard library; Windows; configured local HTTPS proxy; no Authorization header or cookies",
+  "authentication": "none",
+  "repository": "Lshiqi67/proper-hat-guessing-c5-reproducibility",
+  "private": false,
+  "release_id": 425673667,
+  "asset_count": 17,
+  "evidence_asset_metadata_matches": 11,
+  "downloaded_samples": [
+    {
+      "name": "c5-proper-hat-guessing-arxiv-20261027.pdf",
+      "bytes": 509686,
+      "sha256": "170e5f40b5cd0695997760935df38ba8097be07b179c7d4f48ecc597231749e7",
+      "match": true
+    },
+    {
+      "name": "c5-evidence-20261026-v1-weight17.zip",
+      "bytes": 322129,
+      "sha256": "ddf1b789a3696731ee98739483146309aeff9e0ff45325182823aa96938dfe90",
+      "match": true
+    }
+  ],
+  "paper_doi": "10.5281/zenodo.23769672",
+  "paper_doi_scope": "Manuscript only; not an archive of the evidence",
+  "limits": [
+    "Only two assets downloaded anonymously in this check.",
+    "The other fifteen assets were not downloaded in this check.",
+    "No certificate replay, mathematical audit or external peer review performed.",
+    "Historical manifests and licenses were not rewritten."
+  ]
+}

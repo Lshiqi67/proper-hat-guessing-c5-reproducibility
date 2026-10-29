@@ -1,5 +1,11 @@
 # Manuscript and evidence versions
 
+**Public version, 30 October 2026:** [Zenodo preprint v1.0](https://doi.org/10.5281/zenodo.23769672)
+is the same 23-page PDF as `20261027-arxiv-preparation`, SHA-256
+`170e5f40b5cd0695997760935df38ba8097be07b179c7d4f48ecc597231749e7`.
+The DOI identifies the paper only; the evidence remains at the fixed GitHub Release.
+The manuscript date is 27 October; its Zenodo publication date is 30 October.
+
 | Identifier | Role | Relationship |
 | --- | --- | --- |
 | `20261026-audit-integrated` | The 22-page manuscript examined in the consolidated audit | Its PDF remains inside the frozen v2 code archive. |
@@ -26,8 +32,9 @@ that PDF inside an already sealed archive.
 `LOCAL_ONLY`, null URLs and private-review notices inside preserved files report
 their historical preparation state. The current access and intended hosting
 locations are stated separately in the root documentation and
-`metadata/evidence-manifest.json`. Their presence does not claim that this
-repository has already become public or that a DOI has been assigned.
+`metadata/evidence-manifest.json`. Those frozen fields are not current access metadata. The repository is now
+public; the paper DOI and current status are recorded in
+[PUBLICATION-20261030.md](docs/PUBLICATION-20261030.md).
 
 The public release should keep this tag fixed. Any changed source, certificate,
 manifest or paper must receive a new version identifier and new hashes; old

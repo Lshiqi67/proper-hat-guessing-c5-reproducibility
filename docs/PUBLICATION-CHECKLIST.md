@@ -1,5 +1,10 @@
 # Coordinated publication checklist
 
+> Historical preparation record (27–28 October 2026). For the current public
+> status, paper DOI and additional PDF license, see
+> [PUBLICATION-20261030.md](PUBLICATION-20261030.md). The original plan to wait
+> for arXiv was superseded by the author's Zenodo publication decision.
+
 The repository is prepared privately. This checklist does not execute a
 visibility change, an arXiv submission or a release announcement.
 

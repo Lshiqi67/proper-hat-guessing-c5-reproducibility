@@ -1,8 +1,8 @@
 # Download and reproduce the current evidence
 
-Current deposit: **`c5-arxiv-v1-evidence-20261027`**. Current manuscript: **`20261027-arxiv-preparation`**; use the candidate and build instructions in `paper/`. Sealed reproduction package: **`c5-reviewed-evidence-20261027-v2`**.
+Current deposit: **`c5-arxiv-v1-evidence-20261027`**. Published manuscript: **Zenodo v1.0**, identical to **`20261027-arxiv-preparation`**; use the PDF and build instructions in `paper/`. Sealed reproduction package: **`c5-reviewed-evidence-20261027-v2`**.
 
-This guide uses the v2 verifier and complete evidence selected for the 27 October audit. The unchanged v2 instructions are preserved under [reproduction/](reproduction/README.md); [VERSION-MAP.md](VERSION-MAP.md) explains the manuscript history. The repository remains private: use a GitHub account with read access. No public or anonymous download availability is claimed.
+This guide uses the v2 verifier and complete evidence selected for the 27 October audit. The unchanged v2 instructions are preserved under [reproduction/](reproduction/README.md); [VERSION-MAP.md](VERSION-MAP.md) explains the manuscript history. The repository and Release are public as of 30 October 2026. The paper is archived at https://doi.org/10.5281/zenodo.23769672; this DOI does not archive the evidence. See [the public release record](docs/PUBLICATION-20261030.md) for the actual access-check scope.
 
 ## 1. Requirements and scope
 
@@ -14,7 +14,7 @@ Every `--out` directory below must be new, outside the input package, and must n
 
 ## 2. Download this tagged deposit
 
-With GitHub CLI authenticated to an account that has read access, choose a new archive directory:
+With GitHub CLI authenticated to a GitHub account, choose a new archive directory. Repository membership is not required; for downloads without a GitHub account, use the HTTPS helper below:
 
 ```powershell
 $archives = 'D:\c5-archives'
@@ -39,15 +39,15 @@ The repository's download helper fetches only this manifest's named files,
 checks their size and SHA-256, and refuses an existing output directory:
 
 ```powershell
-python -X utf8 -B tools/download_evidence.py --transport gh --out D:\c5-archives
+python -X utf8 -B tools/download_evidence.py --transport https --out D:\c5-archives
 ```
 
 Run either this helper or the preceding `gh release download` example, not both
 into the same directory. For a small trial, add
 `--asset c5-evidence-20261026-v1-weight17.zip` and use a different fresh directory.
-After the repository becomes public, `--transport https` downloads without a
-GitHub account. Public access must first be verified at the publication step;
-it has not been verified by this private preparation.
+`--transport https` downloads from the public Release without a GitHub account.
+The authenticated `--transport gh` remains an alternative. Access-check results
+and their limits are recorded in [the public release record](docs/PUBLICATION-20261030.md).
 
 For files downloaded manually, check every line of
 [the evidence SHA-256 list](metadata/evidence-SHA256SUMS.txt) before extraction:
@@ -150,11 +150,11 @@ archive, the [v2 package validation](audit/v2-packaging-report.json), and the
 current manuscript's build records. FreshRupActive belongs to supplementary
 testing and was not the checker used in the main 27 October replay.
 
-Optional regeneration or SAT search is a different task. Historical generator dependencies are documented inside the package; they are not required for the checks above. No new SAT search, external human peer review, proof-assistant certification, public availability or licence change is implied by this guide.
+Optional regeneration or SAT search is a different task. Historical generator dependencies are documented inside the package; they are not required for the checks above. This guide does not report a new SAT search, external human peer review or proof-assistant certification. Current licenses are described in [LICENSES/SCOPE.md](LICENSES/SCOPE.md).
 
-## Status at preparation
+## Publication status
 
-The current repository is a private prepublication candidate. The future public
-release should make every required asset anonymously accessible in coordination
-with the actual arXiv announcement. Current access and licence wording must stay
-accurate until that publication step. Frozen metadata remains unchanged.
+The repository is public and the preprint is published on [Zenodo](https://doi.org/10.5281/zenodo.23769672),
+version 1.0, dated 30 October 2026. arXiv submission remains pending.
+Frozen metadata retains its original preparation status; the current public
+status and paper license are recorded separately without changing archive hashes.

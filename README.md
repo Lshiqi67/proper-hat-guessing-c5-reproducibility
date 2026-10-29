@@ -1,29 +1,40 @@
 # Proper hat guessing on the five-cycle
 
-**Preparation completed 28 October 2026:** the private Release contains all 17
-verified assets. The current paper has 23 pages. Selected return downloads,
-restoration and a fresh single-leaf replay passed; see the
-[completed checks and exact limits](docs/PREPUBLICATION-VALIDATION.md).
-arXiv website compilation/submission and anonymous access remain pending.
+**Public release, 30 October 2026:** the 23-page preprint is available on
+[Zenodo](https://doi.org/10.5281/zenodo.23769672) as version **1.0**, under **CC BY 4.0**.
+This curated repository and its existing 17 Release assets are public.
+The paper has not been submitted to arXiv and has not undergone external peer review.
 
-This repository is the curated reproduction deposit for Shiqi Liu's manuscript,
+This repository accompanies Shiqi Liu's manuscript,
 *The Proper Hat-Guessing Number of the Five-Cycle: A Computer-Assisted Argument*.
 The paper gives a computer-assisted argument for HG_P(C5) = 4 for arbitrary
 deterministic local strategies under the proper-colouring constraint.
 
-**Prepublication status, 27 October 2026:** this repository is being prepared
-privately. Public access and an arXiv announcement are not claimed. The intended
-public release is coordinated with the paper's actual arXiv announcement; see
-[the publication checklist](docs/PUBLICATION-CHECKLIST.md). The [license map](LICENSES/SCOPE.md) applies MIT to author-controlled code
-and CC BY 4.0 to reproduction documentation and audit reports; the manuscript
-retains its separate arXiv license selection.
+## Cite the paper and evidence
+
+> Liu, Shiqi (2026). *The Proper Hat-Guessing Number of the Five-Cycle:
+> A Computer-Assisted Argument* (Version 1.0). Zenodo.
+> https://doi.org/10.5281/zenodo.23769672
+
+The DOI identifies the **paper**, not a Zenodo archive of the computational evidence.
+For reproducibility, also identify the fixed evidence Release
+[`c5-arxiv-v1-evidence-20261027`](https://github.com/Lshiqi67/proper-hat-guessing-c5-reproducibility/releases/tag/c5-arxiv-v1-evidence-20261027).
+See [CITATION.cff](CITATION.cff) and the [public release record](docs/PUBLICATION-20261030.md).
+
+Author-controlled code is MIT; reproduction documentation and audit reports
+are CC BY 4.0. The exact published manuscript PDF is now also CC BY 4.0;
+older manuscripts and source files retain their separate permissions.
+See the [license scope](LICENSES/SCOPE.md).
+
+The [28 October preparation checks](docs/PREPUBLICATION-VALIDATION.md) are
+historical records. Public release does not constitute a new mathematical audit.
 
 ## Start here
 
 | Purpose | Entry |
 | --- | --- |
-| Read the current submission candidate | [Paper PDF](paper/c5-proper-hat-guessing-arxiv.pdf) |
-| Build that candidate | [LaTeX source](paper/main.tex), [build instructions](paper/BUILDING.md) |
+| Read the published manuscript | [Paper PDF](paper/c5-proper-hat-guessing-arxiv.pdf) |
+| Build the manuscript | [LaTeX source](paper/main.tex), [build instructions](paper/BUILDING.md) |
 | Download and verify the computational evidence | [English reproduction guide](REPRODUCING.md) |
 | Read the computational verification scope | [Audit overview](audit/README.md) |
 | Identify the exact archived inputs and proofs | [Evidence manifest](metadata/evidence-manifest.json), [SHA-256 list](metadata/evidence-SHA256SUMS.txt) |
@@ -31,10 +42,10 @@ retains its separate arXiv license selection.
 | Understand AI assistance | [Authorship statement](AUTHORSHIP.md) |
 
 The fixed deposit identifier is `c5-arxiv-v1-evidence-20261027`. Its
-[Release](https://github.com/Lshiqi67/proper-hat-guessing-c5-reproducibility/releases/tag/c5-arxiv-v1-evidence-20261027) is the intended home of all eleven sealed reproduction
+[Release](https://github.com/Lshiqi67/proper-hat-guessing-c5-reproducibility/releases/tag/c5-arxiv-v1-evidence-20261027) contains all eleven sealed reproduction
 archives. They total **1,910,553,676 bytes**. A repository clone does not contain
 the complete CNF and DRUP files; download the Release assets before restoring
-the evidence. Private access requires an authorized GitHub account.
+the evidence. The public Release can be accessed without repository membership.
 
 ## What was checked
 
